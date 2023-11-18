@@ -1,28 +1,39 @@
 return {
   "christoomey/vim-tmux-navigator",
+  -- NEORG
   {
-    "nvim-orgmode/orgmode",
-    dependencies = {
-      { "nvim-treesitter/nvim-treesitter", lazy = true },
-    },
-    event = "VeryLazy",
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    lazy = false,
     config = function()
-      -- Load treesitter grammar for org
-      require("orgmode").setup_ts_grammar()
-
-      -- Setup treesitter
-      require("nvim-treesitter.configs").setup({
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = { "org" },
+      require("neorg").setup({
+        load = {
+          ["core.export.markdown"] = {
+            extension = "md",
+          },
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.concealer"] = {
+            config = {
+              icon_preset = "basic",
+            },
+          }, -- Adds pretty icons to your documents
+          ["core.summary"] = {},
+          ["core.completion"] = {
+            config = {
+              engine = "nvim-cmp",
+            },
+          },
+          ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/notes",
+                machineLearning = "~/notes/machineLearning",
+                technology = "~/notes/technology",
+              },
+            },
+          },
         },
-        ensure_installed = { "org" },
-      })
-
-      -- Setup orgmode
-      require("orgmode").setup({
-        org_agenda_files = "~/notes/org/roam/**/*",
-        org_default_notes_file = "~/notes/org/roam/refile.org",
       })
     end,
   },
