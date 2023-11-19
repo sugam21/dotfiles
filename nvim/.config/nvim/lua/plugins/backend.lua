@@ -9,9 +9,7 @@ return {
     config = function()
       require("neorg").setup({
         load = {
-          ["core.export.markdown"] = {
-            extension = "md",
-          },
+          ["core.export.markdown"] = {},
           ["core.defaults"] = {}, -- Loads default behaviour
           ["core.concealer"] = {
             config = {

@@ -71,8 +71,8 @@ return {
     config = function()
       require("dashboard").setup({
         hide = {
-          statusline = false, -- hide statusline default is true
-          tabline = false, -- hide the tabline
+          statusline = true, -- hide statusline default is true
+          tabline = true, -- hide the tabline
           winbar = false, -- hide winbar
         },
       })
