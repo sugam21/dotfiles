@@ -56,11 +56,11 @@ alias lg="lazygit"
 
 # Fuzzy Finder
 
-alias ff="fd --type f --hidden --exclude .git| fzf-tmux -p --reverse --height 40% --border double| xargs nvim"
+alias fn="fd --type f --hidden --exclude .git| fzf-tmux -p --reverse --height 40% --border double| xargs nvim"
 
 
 # FOR FUZZY FINDER
-alias sd="cd ~ && cd \$(find * -type d | fzf --height 40% --border double)"
+alias fff="cd ~ && cd \$(find * -type d | fzf --height 40% --border double)"
 
 # J U P Y T E R - N O T E B O O K
 alias jl="jupyter lab"
