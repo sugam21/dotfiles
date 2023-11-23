@@ -1,5 +1,8 @@
 return {
-  "christoomey/vim-tmux-navigator",
+  { "christoomey/vim-tmux-navigator" },
+  -- Nvim-R
+  { "jalvesaq/Nvim-R" },
+  { "lervag/vimtex" },
   -- NEORG
   {
     "nvim-neorg/neorg",

@@ -68,15 +68,15 @@ return {
     opts = {
       theme = "hyper",
     },
-    config = function()
-      require("dashboard").setup({
-        hide = {
-          statusline = true, -- hide statusline default is true
-          tabline = true, -- hide the tabline
-          winbar = false, -- hide winbar
-        },
-      })
-    end,
-    dependencies = { { "nvim-tree/nvim-web-devicons" } },
+    -- config = function()
+    --   require("dashboard").setup({
+    --     hide = {
+    --       statusline = true, -- hide statusline default is true
+    --       tabline = true, -- hide the tabline
+    --       winbar = false, -- hide winbar
+    --     },
+    --   })
+    -- end,
+    -- dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
 }
