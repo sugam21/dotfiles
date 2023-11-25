@@ -19,8 +19,9 @@ return {
       vim.cmd([[let g:mkdp_auto_start = 1]]),
       vim.cmd([[let g:mkdp_auto_close = 0]]),
       vim.cmd([[let g:mkdp_refresh_slow = 0]]),
-      vim.cmd([[let g:mkdp_command_for_global = 1]]),
+      vim.cmd([[let g:mkdp_command_for_global = 0]]),
       vim.cmd([[let g:mkdp_combine_preview = 1]]),
+      -- vim.cmd([[let g:mkdp_markdown_css = '/home/sugam/.config/nvim/index.css']]),
       -- -- " set to 1, nvim will open the preview window after entering the Markdown buffer
       -- -- " default: 0
       -- mkdp_auto_start = 1,
