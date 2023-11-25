@@ -12,7 +12,14 @@ keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
 keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
 keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
-
+-- NVIM OBSIDIAN
+keymap.set("n", "gf", function()
+  if require("obsidian").util.cursor_on_markdown_link() then
+    return "<cmd>ObsidianFollowLink<CR>"
+  else
+    return "gf"
+  end
+end, { noremap = false, expr = true })
 -- New tab
 keymap.set("n", "te", ":tabedit")
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
