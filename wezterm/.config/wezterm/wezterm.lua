@@ -17,7 +17,7 @@ return {
 	font_size = 15.0,
 	font = wezterm.font("JetbrainsMonoNL Nerd Font"),
 
-	window_decorations = "TITLE|RESIZE",
+	window_decorations = "RESIZE",
 	-- macos_window_background_blur = 40,
 	-- macos_window_background_blur = 30,
 
