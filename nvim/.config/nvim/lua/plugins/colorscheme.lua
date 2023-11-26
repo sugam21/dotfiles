@@ -2,8 +2,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      --colorscheme = "no-clown-fiesta",
-      colorscheme = "pywal",
+      colorscheme = "no-clown-fiesta",
+      --colorscheme = "pywal",
     },
   },
   { "AlphaTechnolog/pywal.nvim", as = "pywal" },
