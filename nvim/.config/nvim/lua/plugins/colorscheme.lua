@@ -2,9 +2,11 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "no-clown-fiesta",
+      --colorscheme = "no-clown-fiesta",
+      colorscheme = "pywal",
     },
   },
+  { "AlphaTechnolog/pywal.nvim", as = "pywal" },
   { "aktersnurra/no-clown-fiesta.nvim" },
   {
     "EdenEast/nightfox.nvim",
