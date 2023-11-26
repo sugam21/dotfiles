@@ -13,7 +13,6 @@ return {
       -- Requirements
       -- https://github.com/3rd/image.nvim?tab=readme-ov-file#requirements
       local backend = "kitty"
-
       local shell
       if vim.fn.has("nvim-0.10.0") == 1 then
         -- print('nvim >= 0.10')
