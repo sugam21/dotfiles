@@ -111,14 +111,22 @@ return {
             enabled = true,
             -- clear_in_insert_mode = true,
             -- download_remote_images = true,
-            only_render_image_at_cursor = true,
+            only_render_image_at_cursor = false,
             filetypes = { "markdown", "vimwiki", "quarto" },
+          },
+          neorg = {
+            enabled = true,
+            clear_in_insert_mode = false,
+            download_remote_images = false,
+            only_render_image_at_cursor = false,
+            filetypes = { "norg" },
           },
         },
         max_width = 100,
         max_height = 15,
         editor_only_render_when_focused = false, -- auto show/hide images when the editor gains/looses focus
         tmux_show_only_in_active_window = true, -- auto show/hide images in the correct Tmux window (needs visual-activity off)
+        hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp" }, -- render image files as images when opened
       })
     end,
   },
