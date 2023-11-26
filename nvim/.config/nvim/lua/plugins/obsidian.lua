@@ -20,6 +20,7 @@ return {
     },
     completion = {
       nvim_cmp = true,
+      use_path_only = true,
     },
     mappings = {
       -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
