@@ -36,6 +36,32 @@ eval "$(zoxide init zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# PYWALL
+#
+# ## You can create a function for this in your shellrc (.bashrc, .zshrc).
+# wal-tile() {
+#     wal -n -i "$@"
+#     feh --bg-tile "$(< "${HOME}/.cache/wal/wal")"
+# }
+#
+# # Usage:
+# wal-tile "~/Pictures/Wallpapers/"
+
+#Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+# Not supported in the "fish" shell.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
+wal -R
+
+
+
 # A L I A S
 alias em="emacsclient -c -a 'emacs'"
 #Utilities
@@ -54,6 +80,8 @@ alias gpo="git pull origin"
 
 alias lg="lazygit"
 
+# Notes
+alias notes="cd ~/Documents/Notes/"
 # Fuzzy Finder
 
 alias fn="fd --type f --hidden --exclude .git| fzf-tmux -p --reverse --height 40% --border double| xargs nvim"
