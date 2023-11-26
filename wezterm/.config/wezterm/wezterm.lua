@@ -18,16 +18,16 @@ return {
 	font = wezterm.font("JetbrainsMonoNL Nerd Font"),
 
 	--	window_decorations = "RESIZE",
-	macos_window_background_blur = 40,
+	--macos_window_background_blur = 40,
 	-- macos_window_background_blur = 30,
 
-	window_background_image = "/home/sugam/Pictures/Wallpapers/terminal_background.jpg",
-	window_background_image_hsb = {
-		brightness = 0.5,
-		hue = 1.0,
-		saturation = 1,
-	},
-	window_background_opacity = 0.92,
+	-- window_background_image = "/home/sugam/Pictures/Wallpapers/terminal_background.jpg",
+	-- window_background_image_hsb = {
+	-- 	brightness = 0.5,
+	-- 	hue = 1.0,
+	-- 	saturation = 1,
+	-- },
+	--window_background_opacity = 0.92,
 	--window_background_opacity = 1,
 	-- window_background_opacity = 0.78,
 	-- window_background_opacity = 0.20,
