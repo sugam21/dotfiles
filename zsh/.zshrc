@@ -69,7 +69,8 @@ alias cls="clear"
 # alias ls="logo-ls"
 alias lsa="logo-ls -a"
 alias lsl="logo-ls -la"
-
+# RSTUDIO
+alias rstudio="sudo rstudio --no-sandbox"
 #Github
 alias gs="git status"
 alias ga="git add ."
