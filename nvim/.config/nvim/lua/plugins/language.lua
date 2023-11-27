@@ -138,8 +138,8 @@ return {
       vim.g.slime_python_ipython = 1
 
       require("which-key").register({
-        ["<leader>cm"] = { mark_terminal, "mark terminal" },
-        ["<leader>cs"] = { set_terminal, "set terminal" },
+        ["<leader>ctm"] = { mark_terminal, "mark terminal" },
+        ["<leader>cts"] = { set_terminal, "set terminal" },
       })
     end,
   },

@@ -28,3 +28,9 @@ vim.opt.tabstop = 2
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 vim.opt.splitkeep = "cursor"
+--Slime tmux
+vim.g.slime_target = "tmux"
+vim.g.slime_default_config = { socket_name = "default", target_pane = "1" }
+vim.g.slime_bracketed_paste = 1
+-- Slime general
+vim.g.slime_cell_delimiter = "#%%"
