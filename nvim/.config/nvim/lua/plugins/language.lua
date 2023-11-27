@@ -45,7 +45,7 @@ return {
         },
         codeRunner = {
           enabled = false,
-          default_method = nil, -- 'molten' or 'slime'
+          default_method = "slime", -- 'molten' or 'slime'
           ft_runners = {}, -- filetype to runner, ie. `{ python = "molten" }`.
           -- Takes precedence over `default_method`
           never_run = { "yaml" }, -- filetypes which are never sent to a code runner
@@ -134,7 +134,7 @@ return {
       end
 
       -- slime, neovvim terminal
-      vim.g.slime_target = "neovim"
+      vim.g.slime_target = "tmux"
       vim.g.slime_python_ipython = 1
 
       require("which-key").register({
