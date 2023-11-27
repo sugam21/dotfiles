@@ -88,7 +88,13 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "jmbuhr/otter.nvim" },
+    dependencies = {
+      { "jmbuhr/otter.nvim" },
+      { "jc-doyle/cmp-pandoc-references" },
+      { "kdheepak/cmp-latex-symbols" },
+      { "ray-x/cmp-treesitter" },
+      { "f3fora/cmp-spell" },
+    },
     opts = function(_, opts)
       ---@param opts cmp.ConfigSchema
       local cmp = require("cmp")
@@ -187,4 +193,6 @@ return {
       },
     },
   },
+  -- For displaying equation
+  { "jbyuki/nabla.nvim" },
 }
