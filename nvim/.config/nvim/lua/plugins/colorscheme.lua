@@ -2,7 +2,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "no-clown-fiesta",
+      colorscheme = "catppuccin",
+      --colorscheme = "no-clown-fiesta",
       --colorscheme = "pywal",
     },
   },
@@ -109,10 +110,16 @@ return {
       no_bold = false,
       color_overrides = {
         mocha = {
-          base = "#11111b",
-          mantle = "#0c0c12",
+          all = {
+            text = "#ffffff",
+          },
+          base = "#0b0c0f",
+          mantle = "#0E0F13",
           crust = "#31314e",
           green = "#89BD9E",
+          red = "#E95678",
+          yellow = "#FAB795",
+          magenta = "#F075B5",
         },
       },
       custom_highlights = function(colors)
