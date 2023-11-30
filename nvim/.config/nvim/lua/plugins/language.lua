@@ -1,12 +1,3 @@
--- This is a config that can be merged with your
--- existing LazyVim config.
---
--- It configures all plugins necessary for quarto-nvim,
--- such as adding its code completion source to the
--- completion engine nvim-cmp.
--- Thus, instead of having to change your configuration entirely,
--- this takes your existings config and adds on top where necessary.
-
 return {
 
   -- this taps into vim.ui.select and vim.ui.input
@@ -150,9 +141,10 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
-        pyright = {},
-        r_language_server = {},
-        julials = {},
+        clangd = {},
+        -- pyright = {},
+        -- r_language_server = {},
+        --julials = {},
         marksman = {
           -- also needs:
           -- $home/.config/marksman/config.toml :
@@ -170,7 +162,7 @@ return {
     opts = {
       ensure_installed = {
         "bash",
-        "c",
+        "cpp",
         "html",
         "javascript",
         "json",
