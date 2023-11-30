@@ -2,8 +2,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
-      --colorscheme = "no-clown-fiesta",
+      --    colorscheme = "catppuccin",
+      colorscheme = "no-clown-fiesta",
       --colorscheme = "pywal",
     },
   },
@@ -108,29 +108,29 @@ return {
     opts = {
       term_colors = true,
       no_bold = false,
-      color_overrides = {
-        mocha = {
-          all = {
-            text = "#ffffff",
-          },
-          base = "#0b0c0f",
-          mantle = "#0E0F13",
-          crust = "#0E0F13",
-          green = "#89BD9E",
-          red = "#E95678",
-          yellow = "#FAB795",
-          magenta = "#F075B5",
-          blue = "#BAD7FF",
-          --lavender = "#7E97AB",
-        },
-      },
-      custom_highlights = function(colors)
-        return {
-          TabLineSel = { bg = colors.pink },
-          CmpBorder = { fg = colors.surface2 },
-          Pmenu = { bg = colors.none },
-        }
-      end,
+      -- color_overrides = {
+      --   mocha = {
+      --     all = {
+      --       text = "#ffffff",
+      --     },
+      --     -- base = "#0b0c0f",
+      --     -- mantle = "#0E0F13",
+      --     -- crust = "#0E0F13",
+      --     -- green = "#89BD9E",
+      --     -- red = "#E95678",
+      --     -- yellow = "#FAB795",
+      --     -- magenta = "#F075B5",
+      --     -- blue = "#BAD7FF",
+      --     --lavender = "#7E97AB",
+      --},
+      --},
+      -- custom_highlights = function(colors)
+      --   return {
+      --     TabLineSel = { bg = colors.pink },
+      --     CmpBorder = { fg = colors.surface2 },
+      --     Pmenu = { bg = colors.none },
+      --   }
+      -- end,
     },
   },
 
