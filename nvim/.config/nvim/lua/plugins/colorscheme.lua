@@ -7,9 +7,7 @@ return {
       --colorscheme = "rose-pine",
     },
   },
-  { "aktersnurra/no-clown-fiesta.nvim", lazy = false, priority = 999, opts = {
-    transparent = true,
-  } },
+  { "aktersnurra/no-clown-fiesta.nvim", lazy = false, priority = 999 },
   {
     "EdenEast/nightfox.nvim",
     priority = 999,
