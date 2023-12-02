@@ -114,27 +114,27 @@ return {
     end,
   },
 
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   ---@class PluginLspOpts
-  --   opts = {
-  --     ---@type lspconfig.options
-  --     servers = {
-  --       -- clangd = {},
-  --       -- pyright = {},
-  --       -- r_language_server = {},
-  --       -- julials = {},
-  --       marksman = {
-  --         -- also needs:
-  --         -- $home/.config/marksman/config.toml :
-  --         -- [core]
-  --         -- markdown.file_extensions = ["md", "markdown", "qmd"]
-  --         filetypes = { "markdown", "quarto" },
-  --         root_dir = require("lspconfig.util").root_pattern(".git", ".marksman.toml", "_quarto.yml"),
-  --       },
-  --     },
-  --   },
-  -- },
+  {
+    "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        -- clangd = {},
+        -- pyright = {},
+        -- r_language_server = {},
+        -- julials = {},
+        marksman = {
+          -- also needs:
+          -- $home/.config/marksman/config.toml :
+          -- [core]
+          -- markdown.file_extensions = ["md", "markdown", "qmd"]
+          filetypes = { "markdown", "quarto" },
+          root_dir = require("lspconfig.util").root_pattern(".git", ".marksman.toml", "_quarto.yml"),
+        },
+      },
+    },
+  },
   { "rafamadriz/friendly-snippets" },
 
   -- Snippet Courtesy of @Zeioth,
