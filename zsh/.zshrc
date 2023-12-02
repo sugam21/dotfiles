@@ -1,12 +1,6 @@
-
-# confirmations, etc.) must go above this block; everything else may go below.
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# FOR AUTOCOMPLETION
-#source ~/dotfiles/zsh/Repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -35,32 +29,6 @@ eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# PYWALL
-#
-# ## You can create a function for this in your shellrc (.bashrc, .zshrc).
-# wal-tile() {
-#     wal -n -i "$@"
-#     feh --bg-tile "$(< "${HOME}/.cache/wal/wal")"
-# }
-#
-# # Usage:
-# wal-tile "~/Pictures/Wallpapers/"
-
-#Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-# Not supported in the "fish" shell.
-# (cat ~/.cache/wal/sequences &)
-#
-# # Alternative (blocks terminal for 0-3ms)
-# cat ~/.cache/wal/sequences
-#
-# # To add support for TTYs this line can be optionally added.
-# source ~/.cache/wal/colors-tty.sh
-# wal -R
-
-
 
 # A L I A S
 alias em="emacsclient -c -a 'emacs'"
@@ -133,19 +101,7 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# FOR JONNY DECIMAL SYSTEM
-cdj() {
-  # Update with your document root folder
-  pushd ~/Work/*/*/${1}*
-}
-
-export cdj
 #
-# To start tmux by default when terminal starts
-#
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-   tmux attach -t default || tmux new -s default
-fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -169,16 +125,15 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/sugam/google-cloud-sdk/path.zsh.inc' ]; then . '/home/sugam/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/sugam/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/sugam/google-cloud-sdk/completion.zsh.inc'; fi
-
 # CATPUCCIN SYNTAX HIGHLIGHTING
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 # FOR SYNTAX HIGHLIGHTING
 source /home/sugam/zsh/Repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# To start tmux by default when terminal starts
+#
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+   tmux attach -t default || tmux new -s default
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
