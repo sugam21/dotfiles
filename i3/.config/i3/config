@@ -17,6 +17,9 @@ exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 
+# PICOM
+exec --no-startup-id picom -b
+
 ############### SOUND
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
@@ -36,7 +39,7 @@ floating_modifier $mod
 
 # ---------------------------ASTHETICS--------------------------
 ############### BOARDER
-default_border pixel 4
+default_border pixel 0
 
 
 
