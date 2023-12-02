@@ -14,7 +14,7 @@ return {
 	},
 	color_scheme = "customcatppuccin",
 	enable_tab_bar = false,
-	font_size = 14.6,
+	font_size = 15,
 	font = wezterm.font("JetbrainsMonoNL Nerd Font"),
 
 	--	window_decorations = "RESIZE",
@@ -27,7 +27,7 @@ return {
 	-- 	hue = 2.0,
 	-- 	saturation = 1.4,
 	-- },
-	window_background_opacity = 0.9,
+	window_background_opacity = 0,
 	--window_background_opacity = 1,
 	-- window_background_opacity = 0.78,
 	-- window_background_opacity = 0.20,
