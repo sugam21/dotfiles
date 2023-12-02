@@ -20,6 +20,12 @@ set $refresh_i3status killall -SIGUSR1 i3status
 # PICOM
 exec --no-startup-id picom -b
 
+# DUNST
+exec --no-startup-id dunst
+
+# TAP TO CLICK FOR Mouse
+exec --no-startup-id xinput set-prop 11 328 1
+
 ############### SOUND
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
