@@ -56,21 +56,21 @@ return {
     },
   },
 
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   dependencies = {
-  --     { "jmbuhr/otter.nvim" },
-  --     { "jc-doyle/cmp-pandoc-references" },
-  --     { "kdheepak/cmp-latex-symbols" },
-  --     { "ray-x/cmp-treesitter" },
-  --     { "f3fora/cmp-spell" },
-  --   },
-  --   opts = function(_, opts)
-  --     ---@param opts cmp.ConfigSchema
-  --     local cmp = require("cmp")
-  --     opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "otter" } }))
-  --   end,
-  -- },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      { "jmbuhr/otter.nvim" },
+      { "jc-doyle/cmp-pandoc-references" },
+      { "kdheepak/cmp-latex-symbols" },
+      { "ray-x/cmp-treesitter" },
+      { "f3fora/cmp-spell" },
+    },
+    opts = function(_, opts)
+      ---@param opts cmp.ConfigSchema
+      local cmp = require("cmp")
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "otter" } }))
+    end,
+  },
   --
   -- send code from python/r/qmd documets to a terminal or REPL
   -- like ipython, R, bash

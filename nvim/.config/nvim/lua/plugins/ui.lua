@@ -1,5 +1,4 @@
 return {
-  -- filename
   {
     "b0o/incline.nvim",
     dependencies = { "craftzdog/solarized-osaka.nvim" },
@@ -35,10 +34,9 @@ return {
     "rcarriga/nvim-notify",
     opts = {
       timeout = 5000,
-      background_colour = "#000000",
     },
   },
-  -- statusline
+  --statusline(
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
@@ -66,18 +64,7 @@ return {
     opts = {
       theme = "hyper",
     },
-    -- config = function()
-    --   require("dashboard").setup({
-    --     hide = {
-    --       statusline = true, -- hide statusline default is true
-    --       tabline = true, -- hide the tabline
-    --       winbar = false, -- hide winbar
-    --     },
-    --   })
-    -- end,
-    -- dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
-
   -- For coloring hex codes
   -- color html colors
   {
@@ -98,7 +85,7 @@ return {
         mode = "background", -- Set the display mode.
         -- Available methods are false / true / "normal" / "lsp" / "both"
         -- True is same as normal
-        tailwind = false, -- Enable tailwind colors
+        tailwind = true, -- Enable tailwind colors
         -- parsers can contain values used in |user_default_options|
         sass = { enable = false, parsers = { "css" } }, -- Enable sass colors
         virtualtext = "■",
