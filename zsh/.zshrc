@@ -8,8 +8,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
+#export ZSH="$HOME/.oh-my-zsh"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # For emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
@@ -22,10 +23,10 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # FOR ZOXIDE
-eval "$(zoxide init zsh)"
+#eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -126,9 +127,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 # CATPUCCIN SYNTAX HIGHLIGHTING
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+#source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 # FOR SYNTAX HIGHLIGHTING
-source /home/sugam/zsh/Repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /home/sugam/zsh/Repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To start tmux by default when terminal starts
 #
