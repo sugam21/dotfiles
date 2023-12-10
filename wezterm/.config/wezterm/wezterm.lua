@@ -22,8 +22,8 @@ return {
 	enable_tab_bar = false,
 	font_size = 15,
 	font = wezterm.font("JetbrainsMonoNL Nerd Font"),
-	window_background_opacity = 0.8,
-	text_background_opacity = 0,
+	window_background_opacity = 1,
+	text_background_opacity = 1,
 	keys = {
 		{
 			key = "f",
