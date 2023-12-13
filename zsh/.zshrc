@@ -30,6 +30,10 @@ alias gpo="git pull origin"
 
 alias lg="lazygit"
 
+# work
+alias work="cd ~/work/"
+alias pt="cd ~/work/python/"
+alias cpp="cd ~/work/cpp/"
 # Fuzzy Finder
 alias fn="fd --type f --hidden --exclude .git| fzf-tmux -p --reverse --height 40% --border double| xargs nvim"
 
@@ -42,6 +46,7 @@ alias jl="jupyter lab"
 # S H O U T D O W N
 alias ssn="sudo shutdown now"
 alias sr="sudo reboot"
+
 alias sdca="sudo dnf clean all"
 
 
@@ -56,7 +61,9 @@ alias .5="cd ../../../../.."
 alias v="nvim"
 
 # Fedora updated
-alias sdu="sudo pacman -Syu"
+alias spu="sudo pacman -Syu"
+alias syu="yay -Syu"
+
 
 # For starship
 eval "$(starship init zsh)"
@@ -74,4 +81,3 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
    tmux attach -t default || tmux new -s default
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
