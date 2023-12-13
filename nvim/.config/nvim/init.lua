@@ -1,5 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+vim.cmd("hi! LineNr guibg=none ctermbg=none")
 if vim.g.neovide then
   vim.o.guifont = "JetBrainsMonoNl Nerd Font:h13" -- text below applies for VimScript
   vim.g.neovide_scale_factor = 0.8
