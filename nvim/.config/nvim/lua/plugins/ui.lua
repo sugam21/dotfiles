@@ -56,4 +56,10 @@ return {
       { "c-Enter", "SlimeParagraphSend", desc = "Slime ParagraphSend" },
     },
   },
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = function()
+      require("colorizer").setup()
+    end,
+  },
 }
