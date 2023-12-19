@@ -452,11 +452,11 @@ strip_workspace_numbers yes
 		    separator          $purple
 		    background         $base2
 		    statusline         $white
-#                          		border 		        bg		txt		indicator
-		focused_workspace	$#C34043	   	$black		$#7E9CD8	$purple
-		active_workspace	$#252535      	$#252535	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+#                  		border 		        bg		txt		indicator
+		focused_workspace	$white        $base2		$#7E9CD8	$purple
+		active_workspace	$white      	$base2 $#7E9CD8	$black
+		inactive_workspace	$black   		$base2	$#7E9CD8		$black
+		urgent_workspace	$urgentred	    	$urgentred	$white		$black
 	}
 }
 
