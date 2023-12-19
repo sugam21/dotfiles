@@ -106,7 +106,7 @@ bindsym $mod+Return exec --no-startup-id wezterm
 bindsym $mod+Shift+q kill
 
 # exit-menu
-bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
+bindsym $mod+Shift+e exec --no-startup-id ~/dotfiles/rofi/.config/rofi/powermenu/type-1/powermenu.sh
 
 bindsym $sup+Shift+l exec --no-startup-id ~/.config/i3/scripts/blur-lock
 

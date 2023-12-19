@@ -54,9 +54,9 @@ if ($bat_state !~ /:               (\w+)/) {
 $status = $1;
 
 if ($status eq 'discharging') {
-	$full_text .= ' ';
+	$full_text .= ' ';
 } elsif ($status eq 'charging') {
-	$full_text .= ' ';
+	$full_text .= ' 󱐋';
 } elsif ($status eq 'Unknown') {
 	open (AC_ADAPTER, "acpi -a |") or die;
 	$ac_adapt = <AC_ADAPTER>;
@@ -75,16 +75,28 @@ if ($status eq 'discharging') {
 
 $short_text = $full_text;
 
-if ($percent < 20) {
-  $label = '';
-} elsif ($percent < 45) {
-  $label = '';
+if ($percent < 10) {
+  $label = '󰁺';
+} elsif ($percent < 20) {
+  $label = '󰁻';
+} elsif ($percent < 30) {
+  $label = '󰁼';
+} elsif ($percent < 40) {
+  $label = '󰁽';
+} elsif ($percent < 50) {
+  $label = '󰁾';
+} elsif ($percent < 60) {
+  $label = '󰁿';
 } elsif ($percent < 70) {
-  $label = '';
-} elsif ($percent < 95) {
-  $label = '';
+  $label = '󰂀';
+} elsif ($percent < 80) {
+  $label = '󰂁';
+} elsif ($percent < 90) {
+  $label = '󰂂';
+} elsif ($percent < 100) {
+  $label = '󰁹';
 } else {
-  $label = '';
+  $label = '󱈏 ';
 }
 
 # print text
@@ -97,14 +109,16 @@ print " $short_text\n";
 if ($status eq 'discharging') {
 
 	if ($percent < 20) {
-		print "#FF0000\n";
+		print "#FF5D62\n";
 	} elsif ($percent < 40) {
-		print "#FFAE00\n";
+		print "#E6C384\n";
 	} elsif ($percent < 60) {
-		print "#FFF600\n";
-	} elsif ($percent < 85) {
-		print "#A8FF00\n";
-	}
+		print "#FFA066\n";
+	} elsif ($percent < 80) {
+		print "#76946A\n";
+	} elsif ($percent < 100) {
+		print "#98BB6C\n";
+  }
 
 	if ($percent < 5) {
 		exit(33);
