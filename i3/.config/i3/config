@@ -221,12 +221,12 @@ bindsym $mod+Shift+0 exec --no-startup-id ~/.config/i3/scripts/power-profiles
 # configuration for workspace behaviour: #
 ##########################################
 
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
@@ -407,7 +407,7 @@ set $darkblue		#1e66f5
 set $lightblue		#89b4fa
 set $urgentred		#e64553
 set $white		#dce0e8
-set $pastelpurple #C9CBFF
+set $border_color #717c7c
 set $black		#11111b
 set $purple		#e345ff
 set $darkgrey		#363a4f
@@ -416,12 +416,13 @@ set $lavender      #b4befe
 set $mediumgrey		#585b70
 set $yellowbrown	#fab387
 set $base #11111b
+set $base #151515
 set $maroon #eba0ac
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    	$pastelpurple	$pastelpurple	$white		$pastelpurple	$pastelpurple
-client.unfocused	    	$pastelpurple	$pastelpurple	$grey		$darkgrey	$darkgrey
+client.focused		    	$border_color	$border_color	$white		$border_color	$border_color
+client.unfocused	    	$border_color	$border_color	$grey		$darkgrey	$darkgrey
 client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
 client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 
@@ -449,11 +450,11 @@ strip_workspace_numbers yes
 
 		    colors {
 		    separator          $purple
-		    background         $base
+		    background         $base2
 		    statusline         $white
 #                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+		focused_workspace	$#C34043	   	$black		$#7E9CD8	$purple
+		active_workspace	$#252535      	$#252535	$darkgrey	$purple
 		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
 		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
 	}
