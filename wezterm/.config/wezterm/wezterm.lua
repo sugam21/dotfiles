@@ -2,15 +2,15 @@ local wezterm = require("wezterm")
 return {
 	force_reverse_video_cursor = true,
 	colors = {
-		foreground = "#dcd7ba",
-		background = "#1f1f28",
+		foreground = "#c5c9c5",
+		background = "#151515",
 
 		cursor_bg = "#c8c093",
 		cursor_fg = "#c8c093",
 		cursor_border = "#c8c093",
 
-		selection_fg = "#c8c093",
-		selection_bg = "#2d4f67",
+		selection_fg = "#C8C093",
+		selection_bg = "#2D4F67",
 
 		scrollbar_thumb = "#16161d",
 		split = "#16161d",
