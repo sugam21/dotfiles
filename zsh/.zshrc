@@ -78,6 +78,7 @@ export TERM="wezterm"
 
 # To start tmux by default when terminal starts
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-   tmux attach -t default || tmux new -s default
+   tmux attach -t main || tmux new -s main
 fi
 
+export PATH=$PATH:/home/sugam/.spicetify
