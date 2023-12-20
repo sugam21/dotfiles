@@ -21,7 +21,7 @@ workspace_layout default
 
 #border indicator on windows:
 new_window pixel 1
-smart_borders on
+#smart_borders on
 
 # Set inner/outer gaps
 gaps inner 0
@@ -29,7 +29,7 @@ gaps outer 0
 
 # show window title bars (not officially supported with i3gaps)
 default_border pixel 4
-
+for_window [class="vlc"] border none # exclude border for vlc
 title_align center
 
 # Use Mouse+$mod to drag floating windows to their wanted position
