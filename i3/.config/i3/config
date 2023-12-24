@@ -210,7 +210,7 @@ bindsym $mod+Shift+9 exec --no-startup-id /usr/local/bin/switch-audio-port
 ## App shortcuts
 #bindsym $mod+w exec --no-startup-id /usr/bin/firefox
 bindsym $sup+b exec --no-startup-id /usr/bin/brave
-bindsym $sup+t exec --no-startup-id /usr/bin/nautilus
+bindsym $sup+t exec --no-startup-id /usr/bin/thunar
 bindsym $sup+Shift+x exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym $sup+Shift+s exec flameshot gui -p ~/Pictures/Screenshots/ && notify-send "Screenshot saved to ~/Pictures/Screenshots/"
 
@@ -241,7 +241,7 @@ set $ws6 "6: "
 assign [class="wezterm"] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="(?i)brave-browser"] $ws2
-assign [class="org.gnome.Nautilus"] $ws3
+assign [class="Thunar"] $ws3
 assign [class="okular"] $ws4
 assign [class="TelegramDesktop"] $ws5
 assign [class="Spotify"] $ws6
@@ -250,7 +250,7 @@ assign [class="Spotify"] $ws6
 for_window [class=wezterm] focus
 for_window [class=(?i)firefox] focus
 for_window [class=(?i)brave-browser] focus
-for_window [class=org.gnome.Nautilus] focus
+for_window [class=Thunar] focus
 for_window [class=okular] focus
 for_window [class=TelegramDesktop] focus
 for_window [class=Spotify] focus
