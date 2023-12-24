@@ -74,7 +74,7 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 # For Nvim
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERM="wezterm"
+#export TERM="wezterm"
 
 # To start tmux by default when terminal starts
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
