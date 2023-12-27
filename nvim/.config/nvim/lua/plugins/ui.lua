@@ -69,11 +69,9 @@ return {
     build = function()
       vim.fn["mkdp#util#install"]()
     end,
-    -- config = function ()
-    --   vim.cmd([[let g:mkdp_auto_start = 1]]),
-    --    vim.cmd([[let g:mkdp_auto_close = 0]]),
-    --    vim.cmd([[let g:mkdp_refresh_slow = 0]]),
-    -- end
+    vim.cmd([[let g:mkdp_auto_start = 1]]),
+    vim.cmd([[let g:mkdp_auto_close = 0]]),
+    vim.cmd([[let g:mkdp_refresh_slow = 0]]),
   },
   {
     "kylechui/nvim-surround",
@@ -84,5 +82,56 @@ return {
         -- Configuration here, or leave empty to use defaults
       })
     end,
+  },
+  {
+    "nvim-neorg/neorg",
+    run = ":Neorg sync-parsers", -- This is the important bit!
+    config = function()
+      require("neorg").setup({
+        load = {
+          ["core.defaults"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                work = "~/notes/work",
+                personal = "~/notes/home",
+              },
+            },
+          },
+          ["core.concealer"] = {
+            config = {
+              icon_preset = "varied",
+            },
+          },
+          ["core.completion"] = { config = { engine = "nvim-cmp" } },
+          ["core.highlights"] = {
+            config = {
+              dim = {
+                tags = {
+                  ranged_verbatim = {
+                    code_block = {
+                      affect = "foreground",
+                      percentage = -50,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      })
+    end,
+  },
+  {
+    "jbyuki/nabla.nvim",
+    keys = {
+      {
+        "<leader>n",
+        function()
+          require("nabla").popup()
+        end,
+        desc = "Nabla math render",
+      },
+    },
   },
 }
