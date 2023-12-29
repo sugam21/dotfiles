@@ -51,7 +51,6 @@ bindsym $mod+"i"  workspace  $ws2
 bindsym $mod+"o"  workspace  $ws3
 bindsym $mod+"p"  workspace  $ws4
 bindsym $mod+"z"  workspace  $ws5
-bindsym $mod+"x"  workspace  $ws6
 
 # switch to workspace with numpad keys
 bindcode $mod+"u" workspace 1
@@ -59,7 +58,6 @@ bindcode $mod+"i" workspace 2
 bindcode $mod+"o" workspace 3
 bindcode $mod+"p" workspace 4
 bindcode $mod+"z" workspace 5
-bindcode $mod+"x" workspace 6
 
 
 # move focused container to workspace
@@ -68,7 +66,6 @@ bindsym $mod+Shift+"i"    move container to workspace  $ws2
 bindsym $mod+Shift+"o"    move container to workspace  $ws3
 bindsym $mod+Shift+"p"    move container to workspace  $ws4
 bindsym $mod+Shift+"z"    move container to workspace  $ws5
-bindsym $mod+Shift+"x"    move container to workspace  $ws6
 
 # resize window (you can also use the mouse for that):
 mode "resize" {
@@ -244,7 +241,7 @@ assign [class="chromium"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="okular"] $ws4
 assign [class="TelegramDesktop"] $ws5
-assign [class="Spotify"] $ws6
+#assign [class="Spotify"] $ws6
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=wezterm] focus
