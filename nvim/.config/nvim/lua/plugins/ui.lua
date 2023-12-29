@@ -72,6 +72,7 @@ return {
     vim.cmd([[let g:mkdp_auto_start = 1]]),
     vim.cmd([[let g:mkdp_auto_close = 0]]),
     vim.cmd([[let g:mkdp_refresh_slow = 0]]),
+    vim.cmd([[let g:mkdp_combine_preview = 1]]),
   },
   {
     "kylechui/nvim-surround",
