@@ -40,6 +40,8 @@ exec --no-startup-id xinput set-prop "SYNA32B3:01 06CB:CE7D Touchpad" "libinput 
 # For vibrant display
 exec --no-startup-id vibrant-cli "eDP" 1.7
 
+# i3 bar toggle
+bindsym $mod+m exec --no-startup-id ~/dotfiles/i3/.config/i3/scripts/i3bartoggle
 
 # switch/iterate between workspaces
 bindsym $mod+Tab workspace next
