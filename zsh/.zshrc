@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.config/emacs/bin/:$PATH"
+export PATH="$HOME/.emacs.d/bin/:$PATH"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
