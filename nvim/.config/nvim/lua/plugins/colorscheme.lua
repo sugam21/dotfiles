@@ -2,11 +2,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyodark",
+      colorscheme = "kanagawa-dragon",
     },
-  },
-  {
-    "tiagovla/tokyodark.nvim",
   },
   {
     "rebelot/kanagawa.nvim",
@@ -21,11 +18,5 @@ return {
         },
       },
     },
-  },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
   },
 }
