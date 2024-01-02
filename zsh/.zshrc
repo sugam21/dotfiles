@@ -8,7 +8,11 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ENABLE_CORRECTION="true"
-
+bindkey "\E[1~" beginning-of-line
+bindkey "\E[4~" end-of-line
+bindkey "\E[H" beginning-of-line
+bindkey "\E[F" end-of-line
+bindkey "\E[3~" delete-char
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
 
