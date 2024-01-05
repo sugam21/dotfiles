@@ -2,3 +2,8 @@
 (package! evil-snipe)
 (package! org-modern)
 (package! org-fancy-priorities)
+(package! deft)
+(package! org-download)
+(package! org-yt)
+(package! ob-mermaid)
+(package! org-timeblock)

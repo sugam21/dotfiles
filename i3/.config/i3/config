@@ -21,7 +21,7 @@ workspace_layout default
 
 #border indicator on windows:
 new_window pixel 1
-#smart_borders on
+smart_borders on
 
 # Set inner/outer gaps
 gaps inner 0

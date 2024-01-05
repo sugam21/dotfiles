@@ -1,27 +1,52 @@
 local wezterm = require("wezterm")
+
 return {
 	force_reverse_video_cursor = true,
-	colors = {
-		foreground = "#c5c9c5",
-		background = "#151515",
-		cursor_bg = "#c8c093",
-		cursor_fg = "#c8c093",
-		cursor_border = "#c8c093",
+	enable_tab_bar = false,
+	font = wezterm.font_with_fallback({
+		"JetBrainsMonoNerdFont",
+	}),
+	font_size = 15,
 
-		selection_fg = "#C8C093",
-		selection_bg = "#2D4F67",
+	line_height = 1.0,
+	harfbuzz_features = { "ss13" },
 
-		scrollbar_thumb = "#16161d",
-		split = "#16161d",
-
-		ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
-		brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
-		indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
+	allow_square_glyphs_to_overflow_width = "Always",
+	color_scheme = "Gruvbox Dark Hard",
+	color_schemes = {
+		["Gruvbox Dark Hard"] = {
+			foreground = "#ebdbb2",
+			background = "#151515",
+			cursor_bg = "#ebdbb2",
+			cursor_fg = "#333333",
+			cursor_border = "#ebdbb2",
+			selection_fg = "#333333",
+			selection_bg = "#ebdbb2",
+			scrollbar_thumb = "#333333",
+			split = "#333333",
+			ansi = {
+				"#282828",
+				"#cc241d",
+				"#98971a",
+				"#d79921",
+				"#458588",
+				"#b16286",
+				"#689d6a",
+				"#a89984",
+			},
+			brights = {
+				"#928374",
+				"#fb4934",
+				"#b8bb26",
+				"#fabd2f",
+				"#83a598",
+				"#d3769b",
+				"#8ec07c",
+				"#ebdbb2",
+			},
+		},
 	},
 
-	enable_tab_bar = false,
-	font_size = 15,
-	font = wezterm.font("JetbrainsMonoNL Nerd Font"),
 	keys = {
 		{
 			key = "f",
