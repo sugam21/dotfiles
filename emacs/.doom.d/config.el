@@ -33,10 +33,10 @@
 (setq deft-directory "~/org")
 
 ;; FONT
-(setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 18 :weight 'Regular)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 18))
+(setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 20 :weight 'Regular)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 20))
 ;; THEME
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-tomorrow-night)
 ;; LINE NUMBERS
 (setq display-line-numbers-type t)
 
