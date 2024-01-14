@@ -36,7 +36,7 @@
 (setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 20 :weight 'Regular)
       doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 20))
 ;; THEME
-(setq doom-theme 'doom-tomorrow-night)
+(setq doom-theme 'doom-solarized-dark)
 ;; LINE NUMBERS
 (setq display-line-numbers-type t)
 

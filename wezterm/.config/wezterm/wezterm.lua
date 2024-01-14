@@ -7,7 +7,13 @@ return {
 		"JetBrainsMonoNerdFont",
 	}),
 	font_size = 15,
-
+	-- For window padding-> make it touch to corners
+	window_padding = {
+		left = 6,
+		right = 6,
+		top = 6,
+		bottom = 2,
+	},
 	line_height = 1.0,
 	harfbuzz_features = { "ss13" },
 

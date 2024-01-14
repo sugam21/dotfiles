@@ -240,23 +240,23 @@ set $tm DisplayPort-0
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
-workspace $ws1 output fm
-workspace $ws2 output fm
-workspace $ws3 output fm
-workspace $ws4 output fm
-workspace $ws5 output fm
-workspace $ws6 output fm
-workspace $ws7 output fm
-workspace $ws8 output fm
+workspace $ws1 output $fm
+workspace $ws2 output $fm
+workspace $ws3 output $fm
+workspace $ws4 output $fm
+workspace $ws5 output $fm
+workspace $ws6 output $fm
+workspace $ws7 output $fm
+workspace $ws8 output $fm
 
-workspace $ws9 output sm
-workspace $ws10 output sm
-workspace $ws11 output sm
-workspace $ws12 output sm
-workspace $ws13 output sm
-workspace $ws14 output sm
-workspace $ws15 output sm
-workspace $ws16 output sm
+workspace $ws9 output $sm
+workspace $ws10 output $sm
+workspace $ws11 output $sm
+workspace $ws12 output $sm
+workspace $ws13 output $sm
+workspace $ws14 output $sm
+workspace $ws15 output $sm
+workspace $ws16 output $sm
 
 
 # Switch to the workspace of secondary monitor
@@ -383,10 +383,10 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # Desktop notifications
 # dunst config used ~/.config/dunst/dunstrc
 # set alternative config if needed:
-#exec --no-startup-id /usr/bin/dunst --config ~/.config/dunst/dunstrc
+exec --no-startup-id /usr/bin/dunst --config ~/.config/dunst/dunstrc
 # may yneed to run dbus-launch explicitly: 
 #exec --no-startup-id dbus-launch /usr/bin/dunst
-exec --no-startup-id /usr/bin/dunst
+#exec --no-startup-id /usr/bin/dunst
 # alternative if you installed aside with XFCE4:
 # exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
@@ -467,8 +467,8 @@ set $maroon #eba0ac
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    	$border_color	$border_color	$white		$border_color	$border_color
-client.unfocused	    	$border_color	$border_color	$grey		$darkgrey	$darkgrey
+client.focused		    	$lavender	$lavender	$white		$lavender	$lavender
+client.unfocused	    	$lavender	$lavender	$grey		$darkgrey	$darkgrey
 client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
 client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 
@@ -479,7 +479,9 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango: JetBrainsMono Regular 12
+        output $fm
+        output $sm
+		font pango: JetBrainsMono Bold 13
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position top
 #	    	i3bar_command i3bar --transparency
