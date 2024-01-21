@@ -6,7 +6,7 @@ return {
 	font = wezterm.font_with_fallback({
 		"JetBrainsMonoNerdFont",
 	}),
-	font_size = 15,
+	font_size = 14,
 	-- For window padding-> make it touch to corners
 	window_padding = {
 		left = 6,
@@ -18,39 +18,18 @@ return {
 	harfbuzz_features = { "ss13" },
 
 	allow_square_glyphs_to_overflow_width = "Always",
-	color_scheme = "Gruvbox Dark Hard",
-	color_schemes = {
-		["Gruvbox Dark Hard"] = {
-			foreground = "#ebdbb2",
-			background = "#151515",
-			cursor_bg = "#ebdbb2",
-			cursor_fg = "#333333",
-			cursor_border = "#ebdbb2",
-			selection_fg = "#333333",
-			selection_bg = "#ebdbb2",
-			scrollbar_thumb = "#333333",
-			split = "#333333",
-			ansi = {
-				"#282828",
-				"#cc241d",
-				"#98971a",
-				"#d79921",
-				"#458588",
-				"#b16286",
-				"#689d6a",
-				"#a89984",
-			},
-			brights = {
-				"#928374",
-				"#fb4934",
-				"#b8bb26",
-				"#fabd2f",
-				"#83a598",
-				"#d3769b",
-				"#8ec07c",
-				"#ebdbb2",
-			},
-		},
+	colors = {
+		foreground = "#f0f0f0",
+		background = "#191919",
+		cursor_bg = "#f0f0f0",
+		cursor_fg = "#f0f0f0",
+		cursor_border = "#262626",
+		split = "#4c4c4c",
+		ansi = { "#8f8aac", "#ac8a8c", "#8aac8b", "#aca98a", "#8aabac", "#ac8aac", "#8aabac", "#e7e7e8" },
+		brights = { "#a39ec4", "#c49ea0", "#9ec49f", "#c4c19e", "#9ec3c4", "#c49ec4", "#9ec3c4", "#f0f0f0" },
+		selection_fg = "#c8c093",
+		selection_bg = "#2d4f67",
+		scrollbar_thumb = "#16161d",
 	},
 
 	keys = {

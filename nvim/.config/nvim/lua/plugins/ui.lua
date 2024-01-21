@@ -1,138 +1,160 @@
 return {
+  -- 🦠ALPHA
   {
-    "echasnovski/mini.surround",
-    enabled = false,
-  },
-  {
-    "echasnovski/mini.ai",
-    enabled = false,
-  },
-  {
-    "RRethy/vim-illuminate",
-    enabled = false,
-  },
-  {
-    "folke/todo-comments.nvim",
-    enabled = false,
-  },
-  {
-    "rcarriga/nvim-notify",
-    enabled = false,
-  },
-  {
-    "stevearc/dressing.nvim",
-    enabled = false,
-  },
-  {
-    "folke/noice.nvim",
-    enabled = false,
-  },
-  { "MunifTanjim/nui.nvim", enabled = true },
 
-  {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
-    opts = {
-      theme = "hyper",
-    },
-  },
-  {
     "goolord/alpha-nvim",
-    enabled = false,
-  },
-  {
-    "ggandor/flit.nvim",
-    enabled = false,
-  },
-  {
-    "folke/edgy.nvim",
-    enabled = false,
-  },
-  {
-    "jpalardy/vim-slime",
-    vim.cmd([[let g:slime_target = "tmux"]]),
-    keys = {
-      { "c-Enter", "SlimeRegionSend<cr>", desc = "Slime send region" },
-      { "c-Enter", "SlimeParagraphSend", desc = "Slime ParagraphSend" },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
     },
-  },
-  {
-    "NvChad/nvim-colorizer.lua",
-    opts = function()
-      require("colorizer").setup()
-    end,
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-    vim.cmd([[let g:mkdp_auto_start = 1]]),
-    vim.cmd([[let g:mkdp_auto_close = 0]]),
-    vim.cmd([[let g:mkdp_refresh_slow = 0]]),
-    vim.cmd([[let g:mkdp_combine_preview = 1]]),
-  },
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
+
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
+      local alpha = require("alpha")
+      local dashboard = require("alpha.themes.dashboard")
+
+      dashboard.section.header.val = {
+        [[                                                                       ]],
+        [[                                                                       ]],
+        [[                                                                       ]],
+        [[                                                                       ]],
+        [[                                                                     ]],
+        [[       ████ ██████           █████      ██                     ]],
+        [[      ███████████             █████                             ]],
+        [[      █████████ ███████████████████ ███   ███████████   ]],
+        [[     █████████  ███    █████████████ █████ ██████████████   ]],
+        [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+        [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+        [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+        [[                                                                       ]],
+        [[                                                                       ]],
+        [[                                                                       ]],
+      }
+
+      alpha.setup(dashboard.opts)
+    end,
+  },
+  -- 🦠FILENAME
+  {
+    "b0o/incline.nvim",
+    dependencies = { "craftzdog/solarized-osaka.nvim" },
+    event = "BufReadPre",
+    priority = 1200,
+    config = function()
+      local colors = require("solarized-osaka.colors").setup()
+      require("incline").setup({
+        highlight = {
+          groups = {
+            InclineNormal = { guibg = colors.magenta100, guifg = colors.base04 },
+            InclineNormalNC = { guifg = colors.violet500, guibg = colors.base03 },
+          },
+        },
+        window = { margin = { vertical = 0, horizontal = 0 } },
+        hide = {
+          cursorline = true,
+        },
+        render = function(props)
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          if vim.bo[props.buf].modified then
+            filename = "[+] " .. filename
+          end
+
+          local icon, color = require("nvim-web-devicons").get_icon_color(filename)
+          return { { icon, guifg = color }, { " " }, { filename } }
+        end,
       })
     end,
   },
+  -- 🦠LUALINE
   {
-    "nvim-neorg/neorg",
-    run = ":Neorg sync-parsers", -- This is the important bit!
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("neorg").setup({
-        load = {
-          ["core.defaults"] = {},
-          ["core.dirman"] = {
-            config = {
-              workspaces = {
-                work = "~/notes/work",
-                personal = "~/notes/home",
-              },
-            },
-          },
-          ["core.concealer"] = {
-            config = {
-              icon_preset = "varied",
-            },
-          },
-          ["core.completion"] = { config = { engine = "nvim-cmp" } },
-          ["core.highlights"] = {
-            config = {
-              dim = {
-                tags = {
-                  ranged_verbatim = {
-                    code_block = {
-                      affect = "foreground",
-                      percentage = -50,
-                    },
-                  },
-                },
-              },
+      require("lualine").setup({
+        options = {
+          theme = "jellybeans",
+          component_separators = "|",
+          section_separators = { left = "", right = "" },
+        },
+        sections = {
+          lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+          lualine_b = { { "filename", path = 1 }, "branch", { "diff", colored = true } },
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = { "filetype", "progress" },
+          lualine_z = { { "location", separator = { right = "" }, left_padding = 2 } },
+        },
+        inactive_sections = {
+          lualine_a = { "filename" },
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = { "location" },
+          lualine_y = {},
+          lualine_z = {},
+        },
+        tabline = {
+          lualine_a = {
+            {
+              "buffers",
+              separator = { left = "", right = "" },
+              right_padding = 2,
+              symbols = { alternate_file = "" },
             },
           },
         },
       })
     end,
   },
+  -- -- 🦠Highlight on yank
+  -- { "machakann/vim-highlightedyank" },
+  -- -- 🦠Illuminate on hover
+  -- { "RRethy/vim-illuminate" },
+  -- 🦠FILE TREE
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-web-devicons",
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   keys = {
+  --     { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+  --   },
+  --   config = function()
+  --     require("neo-tree").setup()
+  --   end,
+  -- },
+  -- 🦠DISPLAY COLOR
   {
-    "jbyuki/nabla.nvim",
-    keys = {
-      {
-        "<leader>n",
-        function()
-          require("nabla").popup()
-        end,
-        desc = "Nabla math render",
-      },
-    },
+    "NvChad/nvim-colorizer.lua",
+    opts = function()
+      require("colorizer").setup({
+        filetypes = { "*" },
+        user_default_options = {
+          RGB = true, -- #RGB hex codes
+          RRGGBB = true, -- #RRGGBB hex codes
+          names = true, -- "Name" codes like Blue or blue
+          RRGGBBAA = true, -- #RRGGBBAA hex codes
+          AARRGGBB = true, -- 0xAARRGGBB hex codes
+          rgb_fn = true, -- CSS rgb() and rgba() functions
+          hsl_fn = true, -- CSS hsl() and hsla() functions
+          css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+          mode = "background", -- Set the display mode.
+          tailwind = true, -- Enable tailwind colors
+          sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
+          virtualtext = "■",
+          always_update = true,
+        },
+      })
+    end,
+  },
+
+  -- 🦠Smooth Cursor
+  {
+    "gen740/SmoothCursor.nvim",
+    config = function()
+      require("smoothcursor").setup({
+        cursor = "",
+      })
+    end,
   },
 }

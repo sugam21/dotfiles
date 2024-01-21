@@ -2,42 +2,41 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
-    },
-  },
-  {
-    "ellisonleao/gruvbox.nvim",
-    requires = { "rktjmp/lush.nvim" },
-    opts = {
-      terminal_colors = true,
-      undercurl = true,
-      underline = true,
-      contrast = "hard",
-      invert_selection = false,
-      inverse = true,
-      bold = true,
-      italic = {
-        strings = true,
-        emphasis = true,
-        comments = true,
-        operators = false,
-        folds = true,
-      },
-      palette_overrides = { dark0_hard = "#151515" },
+      colorscheme = "kanagawa-dragon",
     },
   },
   {
     "rebelot/kanagawa.nvim",
-    opts = {
-      colors = {
-        theme = {
-          dragon = {
-            ui = {
-              bg = "#151515",
+    config = function()
+      require("kanagawa").setup({
+        colors = {
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = "none",
+              },
             },
           },
         },
-      },
-    },
+        overrides = function(colors)
+          local theme = colors.theme
+          return {
+            -- Borderless telescope
+            TelescopeTitle = { fg = theme.ui.special, bold = true },
+            TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+            TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+            TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+            TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
+            TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+            TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+            -- Dark popup menu
+            Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
+            PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
+            PmenuSbar = { bg = theme.ui.bg_m1 },
+            PmenuThumb = { bg = theme.ui.bg_p2 },
+          }
+        end,
+      })
+    end,
   },
 }

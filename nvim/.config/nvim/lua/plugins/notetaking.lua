@@ -1,4 +1,32 @@
 return {
+  -- ▶️  MATHEMATICAL NOTATION
+  {
+    "jbyuki/nabla.nvim",
+    keys = {
+      {
+        "<leader>n",
+        function()
+          require("nabla").popup()
+        end,
+        desc = "Nabla math render",
+      },
+    },
+  },
+
+  -- ▶️  MARKDOWN PREVIEW
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    vim.cmd([[let g:mkdp_auto_start = 1]]),
+    vim.cmd([[let g:mkdp_auto_close = 0]]),
+    vim.cmd([[let g:mkdp_refresh_slow = 0]]),
+    vim.cmd([[let g:mkdp_combine_preview = 1]]),
+  },
+  -- ▶️   ORG MODE
   {
     "nvim-orgmode/orgmode",
     dependencies = {
@@ -25,14 +53,10 @@ return {
       })
     end,
   },
-
-  {
-    "akinsho/org-bullets.nvim",
-    config = function()
-      require("org-bullets").setup()
-    end,
-  },
+  -- ▶️   VIM TABLE
   { "dhruvasagar/vim-table-mode" },
+
+  -- ▶️  ORG WIKI
   {
     "ranjithshegde/orgWiki.nvim",
     config = function()
@@ -41,8 +65,5 @@ return {
         diary_path = "~/Documents/Orgs/diary/",
       })
     end,
-  },
-  {
-    "danilshvalov/org-modern.nvim",
   },
 }

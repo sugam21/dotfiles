@@ -3,7 +3,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin/:$PATH"
-
+export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -23,8 +23,14 @@ alias cls="clear"
 # alias ls="logo-ls"
 alias lsa="logo-ls -a"
 alias lsl="logo-ls -la"
+
+# WIFI
+alias wifi-off="nmcli radio wifi off"
+alias wifi-on="nmcli radio wifi on"
+
 # RSTUDIO
 alias rstudio="sudo rstudio --no-sandbox"
+
 #Github
 alias gs="git status"
 alias ga="git add ."
