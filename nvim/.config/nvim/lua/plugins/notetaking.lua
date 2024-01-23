@@ -66,4 +66,26 @@ return {
       })
     end,
   },
+  {
+    "nvim-neorg/neorg",
+    tag = "latest",
+    ft = "norg",
+    after = "nvim-treesitter",
+    "nvim-telescope",
+    config = function()
+      require("neorg").setup({
+        load = {
+          ["core.defaults"] = {},
+          ["core.norg.dirman"] = {
+            config = {
+              workspaces = {
+                work = "~/notes/work",
+                home = "~/notes/home",
+              },
+            },
+          },
+        },
+      })
+    end,
+  },
 }

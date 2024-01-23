@@ -73,9 +73,12 @@ alias .5="cd ../../../../.."
 # Vim
 alias v="nvim"
 
-# Fedora updated
+# Arch updated
 alias spu="sudo pacman -Syu"
 alias syu="yay -Syu"
+
+# For How do I 
+alias h='function hdi(){ howdoi $* -c -n 2; }; hdi'
 
 
 # For starship
