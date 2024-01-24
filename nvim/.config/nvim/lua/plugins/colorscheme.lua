@@ -6,9 +6,22 @@ return {
     },
   },
   {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = function()
+      require("gruvbox").setup({
+        invert_selection = true,
+        invert_signs = true,
+        invert_tabline = true,
+        transparent_mode = false,
+      })
+    end,
+  },
+  {
     "rebelot/kanagawa.nvim",
     config = function()
       require("kanagawa").setup({
+        transparent = false,
         colors = {
           theme = {
             all = {

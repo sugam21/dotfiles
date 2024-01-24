@@ -71,4 +71,5 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.cmd([[hi LineNr guibg=NONE]])
+vim.cmd([[:set scrolloff=999]])
 -- Change the color of neovim split

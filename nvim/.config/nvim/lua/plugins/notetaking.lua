@@ -76,6 +76,7 @@ return {
       require("neorg").setup({
         load = {
           ["core.defaults"] = {},
+          ["core.concealer"] = { icon_preset = "varied" },
           ["core.norg.dirman"] = {
             config = {
               workspaces = {
