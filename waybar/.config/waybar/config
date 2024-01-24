@@ -1,27 +1,23 @@
-// Global 
 {
     "layer": "top",
     "position": "top",
-
-    // If height property would be not present, it'd be calculated dynamically
     "height": 30,
-
     "modules-left": [
         "custom/launcher",
-        "hyprland/workspaces",
         "sway/mode",
     ],
  
     "modules-center": [
+        "hyprland/workspaces",
     ],
 
     "modules-right": [
         "network",
         "idle_inhibitor",
-        "memory",
-        "cpu",
+        //"memory",
+        //"cpu",
         "pulseaudio",
-        "custom/keyboard-layout",
+        //"custom/keyboard-layout",
         "battery",
         //"custom/PBPbattery",
         "backlight#icon",
@@ -131,11 +127,15 @@
         "format": "  {icon}  ",
         //"format":"{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-        }
+            "1": "u:🐧",
+            "2": "i:🌐",
+            "3": "o:🗂️",
+            "4": "p:📄",
+            "5": "a:🦄",
+            "6": "s:💬",
+            "7": "d:🎺",
+            "8": "z:🐗",
+        },
     },
 
     "pulseaudio": {
