@@ -1,67 +1,159 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 30,
+        "layer": "top",
+        "position": "bottom",
+        "height": 22,
+        "mode":"dock",
+        "exclusive": true,
+        "passthrough": false,
+
+
     "modules-left": [
-        "custom/launcher",
+        "custom/padd",
+        "custom/l_end",
+        "custom/power",
+        "custom/cliphist",
+        "custom/r_end",
+        "custom/l_end",
+        "wlr/taskbar",
+        "custom/spotify",
+        "custom/r_end",
+        "",
+        "custom/padd",
         "sway/mode",
     ],
  
     "modules-center": [
-        "hyprland/workspaces",
+        "custom/padd",
+    "custom/l_end",
+    "idle_inhibitor",
+    "clock",
+    "custom/r_end",
+    "custom/padd",
+    "custom/l_end",
+     "hyprland/workspaces",
+    "custom/r_end",
     ],
 
     "modules-right": [
-        "network",
-        "idle_inhibitor",
-        //"memory",
-        //"cpu",
-        "pulseaudio",
-        //"custom/keyboard-layout",
-        "battery",
-        //"custom/PBPbattery",
-        "backlight#icon",
-        "backlight#value",
-        "clock",
+        "custom/padd",
+        "custom/l_end",
         "tray",
-        //"custom/weather",
-        "custom/power",
+        "battery",
+        "backlight",
+        "custom/r_end",
+        "custom/l_end",
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "custom/r_end",
+        "custom/padd"
     ],
 
     // Modules
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "icon-theme": "Tela-circle-dracula",
+    "spacing": 0,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["Alacritty"],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    }
+  },
 
-    "idle_inhibitor": {
-        "format": "{icon} ",
-        "format-icons":{
-            "activated": "",
-            "deactivated": ""
-        }
-    },
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": " {device_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": " {device_alias}"
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 9
+  },
+
+  "custom/padd": {
+    "format": "  ",
+    "interval": "once",
+    "tooltip": false
+  },
+
+  "custom/l_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+
+  "custom/r_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+
+  "custom/wbar": {
+    "format": "{}", //    //
+    "exec": "echo ; echo  switch menubar //  dock",
+    "on-click": "~/.config/hypr/scripts/wbarconfgen.sh n",
+    "on-click-right": "~/.config/hypr/scripts/wbarconfgen.sh p",
+    "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/quickapps.sh kitty firefox spotify code dolphin",
+    "interval": 86400,
+    "tooltip": true
+  },
+
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰥔 ",
+      "deactivated": " "
+    }
+  },
+
 
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
-    "custom/PBPbattery": {
-        "exec": "~/.config/waybar/scripts/PBPbattery.sh",
-        "format": "{}",
-    },
 
     "clock": {
         "interval": 10,
         "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
         "format": "{:%H:%M}",
-        "tooltip-format": "{:%e %B %Y}"
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
 
     "cpu": {
@@ -96,13 +188,15 @@
     },
 
     "network": {
-        "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "xfce4-terminal -e 'nmtui'",
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󱘖 Wired",
+        "tooltip-format": "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-linked": "󱘖 {ifname} (No IP)",
+        "format-disconnected": " Disconnected",
+        "format-alt": "󰤨 {signalStrength}%",
+        "interval": 5
     },
+
     "network#vpn": {
         "interface": "tun0",
         "format": "  {essid} ({signalStrength}%)",
@@ -124,17 +218,16 @@
         "disable-scroll": true,
         "disable-markup" : false,
         "all-outputs": true,
-        "format": "  {icon}  ",
-        //"format":"{icon}",
+        "format": "{icon}",
         "format-icons": {
-            "1": "u:🐧",
-            "2": "i:🌐",
-            "3": "o:🗂️",
-            "4": "p:📄",
-            "5": "a:🦄",
-            "6": "s:💬",
-            "7": "d:🎺",
-            "8": "z:🐗",
+            "1": "🐧",
+            "2": "🌐",
+            "3": "🗂️",
+            "4": "📄",
+            "5": "🦄",
+            "6": "💬",
+            "7": "🎺",
+            "8": "🐗",
         },
     },
 
@@ -146,38 +239,33 @@
         "format-muted": "婢 {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "וֹ",
-            "headset": "  ",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [""]
-        },
+    "format-icons": {
+        "headphone": " ",
+        "hands-free": " ",
+        "headset": " ",
+        "phone": " ",
+        "portable": " ",
+        "car": " ",
+        "default": [" ", " ", " "],
+    },
         "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
     },
-
-    // to use the weather module replace <your_location> with your city or town
-    // note: do not use spaces: new york would be newyork
     "custom/weather": {
         "exec": "~/.config/waybar/scripts/weather.sh <your_location>", 
         "return-type": "json",
         "interval": 600,
     },
 
-    "tray": {
-        "icon-size": 18,
-        "spacing":10,
-     },
 
-    "backlight#icon": {
-        "format": "{icon}",
-        "format-icons": [""],
-        "on-scroll-down": "brightnessctl -c backlight set 1%-",
-        "on-scroll-up": "brightnessctl -c backlight set +1%"
+    "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "min-length": 6
     },
 
     "backlight#value" :{
@@ -212,7 +300,7 @@
 
     "custom/power": {
         "format":"⏻",
-        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
+        "on-click": "exec wlogout",
         "tooltip": false,
     },
 }

@@ -8,7 +8,6 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Esc
 keymap.set("i", "jk", "<Esc>")
 keymap.set("i", "kj", "<Esc>")
-keymap.set("i", "caps", "<Esc>")
 keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
 keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
