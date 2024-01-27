@@ -40,7 +40,7 @@ return {
 
   {
     "folke/which-key.nvim",
-    enabled = false,
+    enabled = enabled,
   },
   {
     "folke/todo-comments.nvim",
