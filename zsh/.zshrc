@@ -99,7 +99,6 @@ fi
 
 export PATH=$PATH:/home/sugam/.spicetify
 
-export LS_COLORS="$(vivid generate lava)"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/sugam/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
