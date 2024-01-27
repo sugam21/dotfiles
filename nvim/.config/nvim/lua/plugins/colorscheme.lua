@@ -2,11 +2,33 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-dragon",
+      colorscheme = "darkrose",
     },
   },
   {
+    "srcery-colors/srcery-vim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "water-sucks/darkrose.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "aktersnurra/no-clown-fiesta.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "olivercederborg/poimandres.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
       require("kanagawa").setup({
         transparent = false,
