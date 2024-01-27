@@ -28,12 +28,12 @@ tooltip {
   margin: 3px 0px 3px 3px;
   padding: 0px 5px;
   color: @main-fg;
-  transition: all 0.2s linear;
+  transition: all 0.2s ease-in;
 }
 
 #workspaces button.active {
   background: transparent;
-  color: @wb-act-bg;
+  color: @wb-act-fg;
 }
 
 #backlight,
@@ -56,7 +56,6 @@ tooltip {
 #tray,
 #custom-updates,
 #custom-wallchange,
-#custom-wbar,
 #window,
 #workspaces,
 #custom-l_end,
@@ -70,6 +69,30 @@ tooltip {
   opacity: 1;
   margin: 4px 0px 4px 0px;
   padding: 0px 4px;
+}
+
+#battery {
+  color: @battery;
+}
+#backlight {
+  color: @backlight;
+}
+
+#clock,
+#idle_inhibitor {
+  color: @clock;
+}
+
+#pulseaudio {
+  color: @pulseaudio;
+}
+
+#network {
+  color: @network;
+}
+
+#custom-power {
+  color: @power;
 }
 
 #custom-r_end {

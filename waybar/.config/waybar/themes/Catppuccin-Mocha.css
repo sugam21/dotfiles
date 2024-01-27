@@ -1,7 +1,13 @@
 @define-color bar-bg rgba(0, 0, 0, 0);
 
-@define-color main-bg #ffffff;
-@define-color main-fg #151515;
+@define-color main-bg #1d2021;
+@define-color main-fg #fbf1c7;
 
-@define-color wb-act-bg salmon;
-@define-color wb-act-fg #151515;
+@define-color wb-act-fg #cc241d;
+
+@define-color battery #458588;
+@define-color clock #b8bb26;
+@define-color pulseaudio #b16286;
+@define-color network #d65d0e;
+@define-color power #b8bb26;
+@define-color backlight #d79921;
