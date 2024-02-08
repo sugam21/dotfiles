@@ -23,15 +23,15 @@ return {
   },
   {
     "rcarriga/nvim-notify",
-    enabled = false,
+    enabled = true,
   },
   {
     "stevearc/dressing.nvim",
-    enabled = false,
+    enabled = true,
   },
   {
     "folke/noice.nvim",
-    enabled = false,
+    enabled = true,
   },
   {
     "nvimdev/dashboard-nvim",

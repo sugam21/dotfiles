@@ -70,7 +70,7 @@ return {
     config = function()
       require("lualine").setup({
         options = {
-          theme = "moonfly",
+          theme = "jellybeans",
           component_separators = "|",
           section_separators = { left = "", right = "" },
         },
@@ -127,7 +127,7 @@ return {
     "NvChad/nvim-colorizer.lua",
     opts = function()
       require("colorizer").setup({
-        filetypes = { "*" },
+        filetypes = { "html", "css", "js", "ts" },
         user_default_options = {
           RGB = true, -- #RGB hex codes
           RRGGBB = true, -- #RRGGBB hex codes
@@ -146,6 +146,20 @@ return {
         },
       })
     end,
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    keys = {
+      {
+        -- "<leader>fe",
+        "<leader>e",
+        function()
+          require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
+        end,
+        desc = "Explorer NeoTree (current dir)",
+      },
+    },
   },
 
   -- 🦠Smooth Cursor

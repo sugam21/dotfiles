@@ -28,3 +28,6 @@ keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 keymap.set("n", "<leader>zz", "<cmd> hi WinSeparator guifg=#e7e7e7 <CR>", {})
+
+-- Greatest remap ever
+keymap.set("x", "<leader>p", '"_dP')
