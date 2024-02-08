@@ -51,7 +51,9 @@ alias fn="fd --type f --hidden --exclude .git| fzf-tmux -p --reverse --height 40
 # Android
 alias android="ssh uO_a263@10.24.64.43 -p 8022"
 # FOR FUZZY FINDER
-alias fff="cd ~ && cd \$(find * -type d | fzf --height 40% --border double)"
+alias fw="cd ~ && cd \$(find ~/work -type d | fzf --height 50% --border rounded)"
+alias fd="cd ~ && cd \$(find ~/dotfiles/ -type d | fzf --height 50% --border rounded)"
+alias fdd="cd ~ && cd \$(find  ~/Downloads/ ~/Pictures/ -type d | fzf --height 50% --border rounded)"
 
 # J U P Y T E R - N O T E B O O K
 alias jl="jupyter lab"
@@ -114,3 +116,13 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# pnpm
+export PNPM_HOME="/home/sugam/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
