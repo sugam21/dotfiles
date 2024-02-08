@@ -3,7 +3,7 @@
   border-radius: 0px;
   font-family: "CaskaydiaCove Nerd Font";
   font-weight: bold;
-  font-size: 19px;
+  font-size: 20px;
   min-height: 8px;
   margin: 0px;
   padding: 0px;
@@ -25,9 +25,9 @@ tooltip {
 #workspaces button {
   box-shadow: none;
   text-shadow: none;
-  margin: 3px 0px 3px 3px;
+  margin: 3px 9px 3px 3px;
   padding: 0px 5px;
-  color: @main-fg;
+  color: @workspace-fg;
   transition: all 0.2s ease-in;
 }
 
