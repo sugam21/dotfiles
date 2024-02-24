@@ -8,9 +8,23 @@ return {
     "echasnovski/mini.ai",
     enabled = false,
   },
+  { "windwp/nvim-autopairs", enabled = false },
+  {
+    "echasnovski/mini.surround",
+    enabled = false,
+  },
+  {
+    "echasnovski/mini.pairs",
+    enabled = false,
+  },
   { "ggandor/flit.nvim", enabled = false },
   {
     "nvim-pack/nvim-spectre",
+    enabled = false,
+  },
+
+  {
+    "folke/persistence.nvim",
     enabled = false,
   },
   {
@@ -20,18 +34,6 @@ return {
   {
     "folke/trouble.nvim",
     enabled = false,
-  },
-  {
-    "rcarriga/nvim-notify",
-    enabled = true,
-  },
-  {
-    "stevearc/dressing.nvim",
-    enabled = true,
-  },
-  {
-    "folke/noice.nvim",
-    enabled = true,
   },
   {
     "nvimdev/dashboard-nvim",

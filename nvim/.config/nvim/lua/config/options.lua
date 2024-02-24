@@ -2,8 +2,8 @@ local opt = vim.opt
 vim.g.mapleader = " "
 
 -- TAB
-opt.tabstop = 4 -- default tab
-opt.shiftwidth = 4 -- default indentation
+opt.tabstop = 4      -- default tab
+opt.shiftwidth = 4   -- default indentation
 opt.softtabstop = 4
 opt.expandtab = true -- expands tab to space
 opt.smartindent = true
@@ -32,8 +32,8 @@ opt.backspace = "indent,eol,start" -- backspace works in indentation, end of lin
 opt.splitright = true
 opt.splitbelow = true
 opt.autochdir = false
-opt.iskeyword:append("-") -- treat word-word as a single word
-opt.mouse:append("a") -- mouse is available
+opt.iskeyword:append("-")           -- treat word-word as a single word
+opt.mouse:append("a")               -- mouse is available
 opt.clipboard:append("unnamedplus") -- available system clipboard
 opt.modifiable = true
 opt.encoding = "UTF-8"

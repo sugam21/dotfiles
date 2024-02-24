@@ -12,11 +12,11 @@ return {
     config = function()
       require("gruvbox").setup({
         palette_overrides = {
-          bright_green = "#899B53",
+          bright_green = "#b8bb26",
           neutral_green = "#98971a",
           bright_red = "#ea6962",
           bright_yellow = "#d8a657",
-          bright_blue = "#7daea3",
+          bright_blue = "#83a598",
           bright_purple = "#d3869b",
           bright_aqua = "#7daea3",
           bright_orange = "#e78a4e",
@@ -42,44 +42,6 @@ return {
           operators = true,
           folds = true,
         },
-      })
-    end,
-  },
-
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("kanagawa").setup({
-        transparent = false,
-        colors = {
-          theme = {
-            all = {
-              ui = {
-                bg_gutter = "none",
-              },
-            },
-          },
-        },
-        overrides = function(colors)
-          local theme = colors.theme
-          return {
-            -- Borderless telescope
-            TelescopeTitle = { fg = theme.ui.special, bold = true },
-            TelescopePromptNormal = { bg = theme.ui.bg_p1 },
-            TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
-            TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
-            TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
-            TelescopePreviewNormal = { bg = theme.ui.bg_dim },
-            TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
-            -- Dark popup menu
-            Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
-            PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
-            PmenuSbar = { bg = theme.ui.bg_m1 },
-            PmenuThumb = { bg = theme.ui.bg_p2 },
-          }
-        end,
       })
     end,
   },

@@ -11,6 +11,7 @@
         "custom/l_end",
         "custom/power",
         "custom/cliphist",
+        "custom/wifi",
         "tray",
         "custom/r_end",
     ],
@@ -31,14 +32,13 @@
         "custom/padd",
         "custom/l_end",
         "battery",
+        "custom/padd",
         "backlight",
+        "custom/padd",
         "pulseaudio",
-        "custom/r_end",
-        "custom/l_end",
+        "custom/padd",
         "network",
-        "bluetooth",
         "custom/r_end",
-        "custom/padd"
     ],
 
     // Modules
@@ -150,10 +150,10 @@
 
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
+        "format": "{icon}{volume}%",
         "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "婢 {format_source}",
+        "format-muted": " {volume}%",
         "format-source": "{volume}% ",
         "format-source-muted": "",
     "format-icons": {
@@ -168,11 +168,6 @@
         "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
-    },
-    "custom/weather": {
-        "exec": "~/.config/waybar/scripts/weather.sh <your_location>", 
-        "return-type": "json",
-        "interval": 600,
     },
 
 

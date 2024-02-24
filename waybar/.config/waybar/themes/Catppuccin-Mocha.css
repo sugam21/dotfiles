@@ -1,8 +1,8 @@
-@define-color bar-bg rgba(0, 0, 0, 0);
+@define-color bar-bg rgba(17, 18, 29,0.6);
 
 @define-color main-bg #1d2021;
-@define-color main-fg #fbf1c7;
-@define-color workspace-fg #928374;
+@define-color main-fg #f9f5d7;
+@define-color workspace-fg #f9f5d7;
 
 @define-color wb-act-fg #cc241d;
 

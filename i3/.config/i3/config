@@ -92,7 +92,7 @@ bindsym $mod+r mode "resize"
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Return exec --no-startup-id kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -115,11 +115,11 @@ bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
 #bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
 #bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
 # Backlight setting using dunst osc
-#bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up
-#bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
 ############### BRIGHTNESS
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5% && notify-send "Brightness - $(brightnessctl get | cut -d '.' -f 1)%"                   
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && notify-send "Brightness - $(brightnessctl get | cut -d '.' -f 1)%"
+# bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5% && notify-send "Brightness - $(brightnessctl get | cut -d '.' -f 1)%"                   
+# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && notify-send "Brightness - $(brightnessctl get | cut -d '.' -f 1)%"
 
 
 # change focus
@@ -201,7 +201,7 @@ bindsym $mod+Shift+9 exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 #bindsym $mod+w exec --no-startup-id /usr/bin/firefox
-bindsym $sup+b exec --no-startup-id /usr/bin/chromium
+bindsym $sup+b exec --no-startup-id /usr/bin/brave
 bindsym $sup+t exec --no-startup-id /usr/bin/thunar
 bindsym $sup+s exec --no-startup-id /usr/bin/spotify
 bindsym $sup+e exec --no-startup-id /usr/bin/emacs
@@ -284,7 +284,7 @@ bindsym $mod+Shift+8    move container to workspace  $ws16
 # bind program to workspace and focus to them on startup:
 assign [class="wezterm"] $ws1
 assign [class="(?i)firefox"] $ws2
-assign [class="(?i)chromium"] $ws2
+assign [class="(?i)brave-browser"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="okular"] $ws4
 assign [class="emacs"] $ws5
@@ -294,7 +294,7 @@ assign [class="Spotify"] $ws7
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=wezterm] focus
 for_window [class=(?i)firefox] focus
-for_window [class=(?i)chromium] focus
+for_window [class=(?i)brave-browser] focus
 for_window [class=Thunar] focus
 for_window [class=okular] focus
 for_window [class=TelegramDesktop] focus
@@ -325,10 +325,10 @@ for_window [class=emacs] focus
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 # install picom package (yay -S picom)
 # start using default config 
-#exec_always --no-startup-id picom -b
+# exec_always --no-startup-id picom -b
 #
 # for custom config:
-# exec_always --no-startup-id picom --config  ~/.config/picom/picom.conf
+ exec_always --no-startup-id picom --config  ~/.config/picom/picom.conf
 
 #############################################
 # autostart applications/services on login: #
@@ -483,7 +483,7 @@ bar {
         output $sm
 		font pango: JetBrainsMono Bold 13
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	position top
+	    	position bottom
 #	    	i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output

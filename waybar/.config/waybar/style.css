@@ -1,10 +1,10 @@
 * {
   border: none;
   border-radius: 0px;
-  font-family: "CaskaydiaCove Nerd Font";
+  font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
-  font-size: 20px;
-  min-height: 8px;
+  font-size: 18px;
+  min-height: 6px;
   margin: 0px;
   padding: 0px;
 }
@@ -65,7 +65,8 @@ tooltip {
 #custom-rl_end,
 #custom-rr_end {
   color: @main-fg;
-  background: @main-bg;
+  /* background: @main-bg; */
+  background: transparent;
   opacity: 1;
   margin: 4px 0px 4px 0px;
   padding: 0px 4px;

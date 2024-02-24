@@ -70,7 +70,7 @@ return {
     config = function()
       require("lualine").setup({
         options = {
-          theme = "jellybeans",
+          theme = "seoul256",
           component_separators = "|",
           section_separators = { left = "", right = "" },
         },
@@ -103,25 +103,6 @@ return {
       })
     end,
   },
-  -- -- 🦠Highlight on yank
-  -- { "machakann/vim-highlightedyank" },
-  -- -- 🦠Illuminate on hover
-  -- { "RRethy/vim-illuminate" },
-  -- 🦠FILE TREE
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-tree/nvim-web-devicons",
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  --   keys = {
-  --     { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
-  --   },
-  --   config = function()
-  --     require("neo-tree").setup()
-  --   end,
-  -- },
   -- 🦠DISPLAY COLOR
   {
     "NvChad/nvim-colorizer.lua",
