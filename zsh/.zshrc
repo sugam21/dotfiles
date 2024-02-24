@@ -20,9 +20,9 @@ plugins=(git)
 # A L I A S
 #Utilities
 alias cls="clear"
-# alias ls="logo-ls"
-alias lsa="logo-ls -a"
-alias lsl="logo-ls -la"
+ alias ls="lsd"
+ # alias lsa="lsd"
+ # alias lsl="logo-ls -la"
 
 # WIFI
 alias wifi-off="nmcli radio wifi off"
@@ -52,7 +52,7 @@ alias fn="fd --type f --hidden --exclude .git| fzf-tmux -p --reverse --height 40
 alias android="ssh uO_a263@10.24.64.43 -p 8022"
 # FOR FUZZY FINDER
 alias fw="cd ~ && cd \$(find ~/work -type d | fzf --height 50% --border rounded)"
-alias fd="cd ~ && cd \$(find ~/dotfiles/ -type d | fzf --height 50% --border rounded)"
+alias fd="cd ~ && cd \$(find ~/dotfiles/ -type d -not -path '*/\.git/*' | fzf --height 50% --border rounded)"
 alias fdd="cd ~ && cd \$(find  ~/Downloads/ ~/Pictures/ -type d | fzf --height 50% --border rounded)"
 
 # J U P Y T E R - N O T E B O O K
@@ -126,3 +126,6 @@ esac
 # pnpm end
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
