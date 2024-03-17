@@ -10,16 +10,4 @@ return {
   },
   -- ▶️  VIM-TMUX NAVIGATOR
   { "christoomey/vim-tmux-navigator" },
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    opts = {}, -- this is equalent to setup({}) function
-  },
-  -- ▶️  SMOOTH SCROOLING
-  {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require("neoscroll").setup({})
-    end,
-  },
 }

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# PICTURE=/tmp/i3lock.png
-# SCREENSHOT="scrot -z $PICTURE"
-#
-# BLUR="11x11"
-#
-# $SCREENSHOT
-# convert $PICTURE -blur $BLUR $PICTURE
-i3lock -i /home/sugam/Pictures/wallpapers/uran-wang-EIpPjU_F4MA-unsplash.png
-# rm $PICTURE
+PICTURE=/tmp/i3lock.png
+SCREENSHOT="scrot -z $PICTURE"
+
+BLUR="11x11"
+
+$SCREENSHOT
+convert $PICTURE -blur $BLUR $PICTURE
+i3lock -i $PICTURE
+rm $PICTURE

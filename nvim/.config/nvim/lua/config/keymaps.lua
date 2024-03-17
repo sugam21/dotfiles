@@ -31,3 +31,5 @@ keymap.set("n", "<leader>zz", "<cmd> hi WinSeparator guifg=#e7e7e7 <CR>", {})
 
 -- Greatest remap ever
 keymap.set("x", "<leader>p", '"_dP')
+
+-- keymap.set("n", "<leader>e", "<cmd>NvimTreeOpen<CR>", {})

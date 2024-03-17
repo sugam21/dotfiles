@@ -39,7 +39,6 @@ gsettings set org.gnome.desktop.interface icon-theme 'Tokyonight-Moon'
 #              Apss                 #
 #####################################
 
-
 # OSD window for common actions like volume and capslock
 # (https://github.com/ErikReider/SwayOSD)
 exec swayosd-server &
@@ -49,7 +48,10 @@ exec swayosd-server &
 # Clipboard
 # wl-paste --type text --watch cliphist store & #Stores only text data
 # wl-paste --type image --watch cliphist store & #Stores only image data
-waybar & Brave-browser & swww init & gammastep &
+waybar &
+Brave-browser &
+swww init &
+gammastep &
 # notification daemon
 # dunst &
 mako &

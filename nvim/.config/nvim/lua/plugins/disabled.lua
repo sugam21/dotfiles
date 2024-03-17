@@ -1,5 +1,7 @@
 return {
+  -- { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
+  { "hrsh7th/nvim-cmp", enabled = false },
   {
     "folke/trouble.nvim",
     enabled = false,
@@ -42,7 +44,7 @@ return {
 
   {
     "folke/which-key.nvim",
-    enabled = enabled,
+    enabled = true,
   },
   {
     "folke/todo-comments.nvim",

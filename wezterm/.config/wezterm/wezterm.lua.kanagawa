@@ -1,9 +1,11 @@
 local wezterm = require("wezterm")
 return {
 	force_reverse_video_cursor = true,
+	enable_tab_bar = false,
+	window_decorations = "NONE",
 	colors = {
 		foreground = "#c5c9c5",
-		background = "#151515",
+		background = "#161616",
 		cursor_bg = "#c8c093",
 		cursor_fg = "#c8c093",
 		cursor_border = "#c8c093",
@@ -19,9 +21,21 @@ return {
 		indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
 	},
 
-	enable_tab_bar = false,
-	font_size = 15,
-	font = wezterm.font("JetbrainsMonoNL Nerd Font"),
+	font_size = 14,
+	font = wezterm.font_with_fallback({
+		"JetBrainsMonoNerdFont",
+	}),
+
+	allow_square_glyphs_to_overflow_width = "Always",
+
+	window_padding = {
+		left = 0,
+		right = 6,
+		top = 6,
+		bottom = 0,
+	},
+	line_height = 1.0,
+	-- harfbuzz_features = { "ss13" },
 	keys = {
 		{
 			key = "f",

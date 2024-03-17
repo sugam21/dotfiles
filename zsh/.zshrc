@@ -1,18 +1,13 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local:$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.emacs.d/bin/:$PATH"
+export PATH="$HOME/.cargo/bin/:$PATH"
 export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ENABLE_CORRECTION="true"
-bindkey "\E[1~" beginning-of-line
-bindkey "\E[4~" end-of-line
-bindkey "\E[H" beginning-of-line
-bindkey "\E[F" end-of-line
-bindkey "\E[3~" delete-char
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
 
@@ -20,9 +15,10 @@ plugins=(git)
 # A L I A S
 #Utilities
 alias cls="clear"
- alias ls="lsd"
- # alias lsa="lsd"
- # alias lsl="logo-ls -la"
+alias ls="lsd"
+# ctrl + arrow skip word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
 
 # WIFI
 alias wifi-off="nmcli radio wifi off"
@@ -73,21 +69,17 @@ alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 
 # Vim
-alias v="nvim"
+alias nl="nvim"
+alias v="NVIM_APPNAME=NvChad nvim"
 
 # Arch updated
 alias spu="sudo pacman -Syu"
+alias snu="sudo nala update && sudo nala upgrade"
 alias syu="yay -Syu"
 
 # For How do I 
 alias h='function hdi(){ howdoi $* -c -n 2; }; hdi'
 
-
-# For starship
-eval "$(starship init zsh)"
-
-# For rofi
-export PATH=$HOME/.config/rofi/scripts:$PATH
 
 # For Nvim
 export EDITOR="nvim"
@@ -127,5 +119,12 @@ esac
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+# # For starship
+eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+neofetch
