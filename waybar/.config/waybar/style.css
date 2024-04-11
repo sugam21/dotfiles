@@ -3,13 +3,10 @@
   border-radius: 0px;
   font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
-  font-size: 18px;
-  min-height: 6px;
-  margin: 0px;
-  padding: 0px;
+  font-size: 16px;
 }
 
-@import "themes/Catppuccin-Mocha.css";
+@import "themes/Tomorrow-Night.css";
 
 window#waybar {
   background: @bar-bg;
@@ -18,20 +15,16 @@ window#waybar {
 tooltip {
   background: @main-bg;
   color: @main-fg;
-  border-radius: 7px;
-  border-width: 0px;
 }
 
 #workspaces button {
-  box-shadow: none;
-  text-shadow: none;
-  margin: 3px 9px 3px 3px;
-  padding: 0px 5px;
+  margin: 3px;
+  padding: 0px 1px;
   color: @workspace-fg;
-  transition: all 0.2s ease-in;
+  transition: all 0.1s ease-in;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
   background: transparent;
   color: @wb-act-fg;
 }
@@ -65,11 +58,6 @@ tooltip {
 #custom-rl_end,
 #custom-rr_end {
   color: @main-fg;
-  /* background: @main-bg; */
-  background: transparent;
-  opacity: 1;
-  margin: 4px 0px 4px 0px;
-  padding: 0px 4px;
 }
 
 #battery {
@@ -82,6 +70,7 @@ tooltip {
 #clock,
 #idle_inhibitor {
   color: @clock;
+  font-weight: bold;
 }
 
 #pulseaudio {
@@ -97,31 +86,31 @@ tooltip {
 }
 
 #custom-r_end {
-  border-radius: 0px 10px 10px 0px;
-  margin-right: 5px;
+  /* border-radius: 0px 10px 10px 0px; */
+  /* margin-right: 5px; */
 }
 
 #custom-l_end {
-  border-radius: 10px 0px 0px 10px;
-  margin-left: 5px;
+  /* border-radius: 10px 0px 0px 10px; */
+  /* margin-left: 5px; */
 }
 
 #custom-sr_end {
   border-radius: 0px;
-  margin-right: 5px;
+  /* margin-right: 5px; */
 }
 
 #custom-sl_end {
   border-radius: 0px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
 
 #custom-rr_end {
   border-radius: 0px 7px 7px 0px;
-  margin-right: 5px;
+  /* margin-right: 5px; */
 }
 
 #custom-rl_end {
   border-radius: 7px 0px 0px 7px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }

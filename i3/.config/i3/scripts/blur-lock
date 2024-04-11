@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-PICTURE=/tmp/i3lock.png
-SCREENSHOT="scrot -z $PICTURE"
-
-BLUR="11x11"
-
-$SCREENSHOT
-convert $PICTURE -blur $BLUR $PICTURE
-i3lock -i $PICTURE
-rm $PICTURE
+# PICTURE=/tmp/i3lock.png
+# SCREENSHOT="scrot -z $PICTURE"
+#
+# BLUR="11x11"
+#
+# $SCREENSHOT
+# convert $PICTURE -blur $BLUR $PICTURE
+i3lock -i ~/dotfiles/i3/.config/i3/scripts/blurred_wall.png
+# rm $PICTURE

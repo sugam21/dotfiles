@@ -1,23 +1,26 @@
 return {
-  -- { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
-  { "hrsh7th/nvim-cmp", enabled = false },
+  { "hrsh7th/nvim-cmp", enabled = true },
   {
     "folke/trouble.nvim",
+    enabled = false,
+  },
+  {
+    "windwp/nvim-ts-autotag",
     enabled = false,
   },
   {
     "echasnovski/mini.ai",
     enabled = false,
   },
-  { "windwp/nvim-autopairs", enabled = false },
+  { "windwp/nvim-autopairs", enabled = true },
   {
     "echasnovski/mini.surround",
     enabled = false,
   },
   {
     "echasnovski/mini.pairs",
-    enabled = false,
+    enabled = true,
   },
   { "ggandor/flit.nvim", enabled = false },
   {
@@ -31,24 +34,15 @@ return {
   },
   {
     "RRethy/vim-illuminate",
-    enabled = false,
-  },
-  {
-    "folke/trouble.nvim",
-    enabled = false,
+    enabled = true,
   },
   {
     "nvimdev/dashboard-nvim",
     enabled = false,
   },
-
-  {
-    "folke/which-key.nvim",
-    enabled = true,
-  },
   {
     "folke/todo-comments.nvim",
-    enabled = false,
+    enabled = true,
   },
   {
     "zbirenbaum/copilot.lua",

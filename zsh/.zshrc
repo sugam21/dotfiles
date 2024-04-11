@@ -4,8 +4,8 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin/:$PATH"
 export TERM="xterm-256color"
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
 
 ENABLE_CORRECTION="true"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
@@ -16,6 +16,7 @@ plugins=(git)
 #Utilities
 alias cls="clear"
 alias ls="lsd"
+alias bat="batcat"
 # ctrl + arrow skip word
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
@@ -26,6 +27,8 @@ alias wifi-on="nmcli radio wifi on"
 
 # RSTUDIO
 alias rstudio="sudo rstudio --no-sandbox"
+
+alias cd="z"
 
 #Github
 alias gs="git status"
@@ -47,9 +50,9 @@ alias fn="fd --type f --hidden --exclude .git| fzf-tmux -p --reverse --height 40
 # Android
 alias android="ssh uO_a263@10.24.64.43 -p 8022"
 # FOR FUZZY FINDER
-alias fw="cd ~ && cd \$(find ~/work -type d | fzf --height 50% --border rounded)"
-alias fd="cd ~ && cd \$(find ~/dotfiles/ -type d -not -path '*/\.git/*' | fzf --height 50% --border rounded)"
-alias fdd="cd ~ && cd \$(find  ~/Downloads/ ~/Pictures/ -type d | fzf --height 50% --border rounded)"
+alias fw="z ~ && z \$(find ~/work -type d | fzf --height 50% --border rounded)"
+alias fd="z ~ && z \$(find ~/dotfiles/ -type d -not -path '*/\.git/*' | fzf --height 50% --border rounded)"
+alias fdd="z ~ && z \$(find  ~/Downloads/ ~/Pictures/ -type d | fzf --height 50% --border rounded)"
 
 # J U P Y T E R - N O T E B O O K
 alias jl="jupyter lab"
@@ -69,12 +72,11 @@ alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 
 # Vim
-alias nl="nvim"
-alias v="NVIM_APPNAME=NvChad nvim"
+alias v="nvim"
 
 # Arch updated
 alias spu="sudo pacman -Syu"
-alias snu="sudo nala update && sudo nala upgrade"
+alias snu="sudo apt-get update && sudo apt-get upgrade"
 alias syu="yay -Syu"
 
 # For How do I 
@@ -108,7 +110,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
 # pnpm
 export PNPM_HOME="/home/sugam/.local/share/pnpm"
 case ":$PATH:" in
@@ -127,4 +128,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 fpath+=${ZDOTDIR:-~}/.zsh_functions
-neofetch
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+eval "$(zoxide init zsh)"
+source /home/sugam/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/sugam/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/sugam/.zsh/plugins/zsh-bat/zsh-bat.plugin.zsh

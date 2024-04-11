@@ -3,33 +3,22 @@ local wezterm = require("wezterm")
 return {
 	force_reverse_video_cursor = true,
 	enable_tab_bar = false,
-	window_decorations = "NONE",
+	window_decorations = "TITLE | RESIZE",
 	font = wezterm.font_with_fallback({
-		"JetBrainsMonoNerdFont",
+		"JetBrainsMonoNL Nerd Font",
 	}),
 	font_size = 14,
+	-- color_scheme = "Tomorrow Night",
+	color_scheme = "Gruvbox dark, hard (base16)",
+	-- color_scheme = "GruvboxDarkHard",
 	-- For window padding-> make it touch to corners
 	window_padding = {
-		left = 6,
+		left = 5,
 		right = 5,
 		top = 5,
-		bottom = 2,
+		bottom = 1,
 	},
 	line_height = 1.0,
-	colors = {
-		foreground = "#dbbe98",
-		background = "#19181b",
-		cursor_bg = "#928374",
-		cursor_fg = "#f0f0f0",
-		cursor_border = "#f0f0f0",
-		split = "#4c4c4c",
-		ansi = { "#fbf1c7", "#ea6962", "#899B53", "#d8a657", "#7daea3", "#d3869b", "#98971a", "#7c6f64" },
-		brights = { "#9d8374", "#fb4934", "#899B53", "#fabd2f", "#458588", "#d3869b", "#98971a", "#3c3836" },
-		selection_fg = "#c8c093",
-		selection_bg = "#2d4f67",
-		scrollbar_thumb = "#16161d",
-	},
-
 	keys = {
 		{
 			key = "f",

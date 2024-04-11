@@ -1,0 +1,192 @@
+#---------- V A R I A B L E S -------------
+# Logo key. Use Mod1 for Alt.
+set $mod Mod1
+set $sup Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Your terminal emulator
+set $term flatpak run org.wezfurlong.wezterm
+
+# AUDIO CONTROL
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
+
+# mute
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_mute
+
+# mic mute toggle
+bindsym XF86AudioMicMute exec amixer sset Capture toggle
+
+bindsym XF86AudioPlay exec --no-startup-id playerctl play
+bindsym XF86AudioPause exec --no-startup-id playerctl pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# BRIGHTNESS CONTROL
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
+
+# Custom launcher
+set $menu "/home/sugam/dotfiles/rofi/.config/rofi/launchers/type-6/launcher.sh"
+
+### Idle configuration
+#
+ exec swayidle -w \
+         timeout 86400 'swaylock -f -c 000000' \
+	  timeout 15 'swaylock -f -i ~/Pictures/blobs-d-8df5f7b2975a60f8ad7e525af8b7e6ae176e54b3.jpg --indicator-radius 70 --inside-color 1e1e2e --inside-clear-color f5c2e7 --inside-wrong-color f38ba8 --ring-color 1e1e2e --ring-clear-color f5c2e7 --ring-ver-color 89b4fa --ring-wrong-color f38ba8 --inside-ver-color 89b4fa  --line-clear-color f5c2e7 --line-wrong-color f38ba8 --line-ver-color 89b4fa --font "SF Pro Display"' \
+          timeout 86400 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          before-sleep 'swaylock -f -c 000000' \
+	  before-sleep 'swaylock -f -i ~/Pictures/blobs-d-8df5f7b2975a60f8ad7e525af8b7e6ae176e54b3.jpg --indicator-radius 70 --inside-color 1e1e2e --inside-clear-color f5c2e7 --inside-wrong-color f38ba8 --ring-color 1e1e2e --ring-clear-color f5c2e7 --ring-ver-color 89b4fa --ring-wrong-color f38ba8 --inside-ver-color 89b4fa  --line-clear-color f5c2e7 --line-wrong-color f38ba8 --line-ver-color 89b4fa --font "SF Pro Display"'
+
+  # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+### KEY BINDINGS
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+Shift+q kill
+
+    # Start your launcher
+    bindsym $mod+space exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+# Rofi Menus:
+# bindsym $mod+m exec "bash /home/prtyksh/.config/rofi/applets/bin/mpd.sh"
+    bindsym XF86PowerOff exec "bash /home/prtyksh/.config/rofi/powermenu/type-6/powermenu.sh"
+    # bindsym $mod+Shift+e exec --no-startup-id ~/dotfiles/rofi/.config/rofi/powermenu/type-5/powermenu.sh
+
+    # Restart Waybar
+
+    bindsym $mod+Shift+n exec ~/dotfiles/waybar/.config/waybar/launch.sh
+    bindsym $mod+Shift+m exec killall waybar || waybar
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+u workspace number 1
+    bindsym $mod+i workspace number 2
+    bindsym $mod+o workspace number 3
+    bindsym $mod+p workspace number 4
+    bindsym $mod+a workspace number 5
+    bindsym $mod+s workspace number 6
+    bindsym $mod+d workspace number 7
+    bindsym $mod+z workspace number 8
+    bindsym $mod+x workspace number 9
+    # Move focused container to workspace
+    bindsym $mod+Shift+u move container to workspace number 1
+    bindsym $mod+Shift+i move container to workspace number 2
+    bindsym $mod+Shift+o move container to workspace number 3
+    bindsym $mod+Shift+p move container to workspace number 4
+    bindsym $mod+Shift+a move container to workspace number 5
+    bindsym $mod+Shift+s move container to workspace number 6
+    bindsym $mod+Shift+d move container to workspace number 7
+    bindsym $mod+Shift+z move container to workspace number 8
+    bindsym $mod+Shift+x move container to workspace number 9
+#
+# Layout stuff:
+    # Switch the current container between different layout styles
+    # bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    # bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    # bindsym $mod+a focus parent
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Note the quoting, the $() and the arguments quoting. All the parts are equally
+# important to make the magic work. And if you want to learn the secret behind
+# the trick, it's all in the `wordexp(3)`.
+#
+include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+
+
+# bindsym $mod+Shift+b exec pkill -USR1 gammastep || gammastep -O 3200
+
+# exec --no-startup-id gammastep -t 5700:3600 -l 18.5:73.8
+# bindsym $mod+Shift+b exec gammastep -t 5700:3600 -l 18.5:73.8
+
+# App shortcuts
+#
+    bindsym $mod+n exec thunar
+    bindsym $mod+b exec Brave
+#
+# Screenshots
+
+    bindsym $sup+Shift+s exec grim -g "$(slurp)"
+    bindsym $sup+Shift+f exec grim
+#
+#
+

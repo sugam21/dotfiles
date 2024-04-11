@@ -1,0 +1,11 @@
+# Auth with polkit-gnome:
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Desktop notifications
+exec rofi
+
+# Network Applet
+exec nm-applet --indicator
+# Bluetooth
+exec --no-startup-id blueberry-tray
+

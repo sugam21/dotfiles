@@ -1,0 +1,3 @@
+
+exec_always ~/dotfiles/sway/.config/sway/scripts/execute_first.sh 
+include $HOME/dotfiles/sway/.config/sway/config.d/*
