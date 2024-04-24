@@ -135,3 +135,12 @@ eval "$(zoxide init zsh)"
 source /home/sugam/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/sugam/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/sugam/.zsh/plugins/zsh-bat/zsh-bat.plugin.zsh
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/sugam/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

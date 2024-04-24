@@ -7,7 +7,4 @@ return {
       require("live-server").setup({})
     end,
   },
-  {
-    "diepm/vim-rest-console",
-  },
 }

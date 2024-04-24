@@ -1,12 +1,18 @@
 # Assign workspaces
-assign [app_id="firefox"] 2
-for_window [app_id="firefox"] focus
-
 assign [class="firefox"] 2
 for_window [class="firefox"] focus
 
+assign [class="org.wezfurlong.wezterm"] 1
+for_window [class="org.wezfurlong.wezterm"] focus
+
+assign [class="brave-browser"] 2
+for_window [class="brave-browser"] focus
+
 assign [app_id=thunar] 3
 for_window [app_id=thunar] focus
+
+assign [class="Nautilus"] 3
+for_window [class="Nautilus"] focus
 
 assign [class="Telegram"] 4
 for_window [class="Telegram"] focus
