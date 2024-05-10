@@ -1,5 +1,5 @@
-font pango: JetBrainsMonoNL Nerd Font 11
-
+# font pango: JetBrainsMonoNL Nerd Font 11
+font pango: Ubuntu Sans 12
 # set the mod key to the winkey:
 set $mod Mod1
 set $sup Mod4
@@ -12,13 +12,13 @@ default_floating_border pixel 0
 exec --no-startup-id xinput set-prop "syna32b3:01 06cb:ce7d touchpad" "libinput natural scrolling enabled" 1
 exec --no-startup-id xinput set-prop "syna32b3:01 06cb:ce7d touchpad" "libinput tapping enabled" 1
 exec --no-startup-id xinput set-prop 16 332 1
-
+# polkit agent
+exec --no-startup-id lxpolkit 
 exec --no-startup-id xss-lock -- ~/dotfiles/i3/.config/i3/scripts/blur-lock.sh
 
 ######################################
 # keybindings for different actions: #
 ######################################
-
 # start a terminal
 bindsym $mod+Return exec --no-startup-id flatpak run org.wezfurlong.wezterm
 
@@ -293,6 +293,9 @@ exec --no-startup-id redshift-gtk
 # start blueberry app for managing bluetooth devices from tray:
 exec --no-startup-id blueberry-tray
 
+# exec_always --no-startup-id picom -b
+
+exec_always --no-startup-id picom --config ~/dotfiles/i3/.config/i3/picom.conf
 # networkmanager-applet
 exec --no-startup-id nm-applet
 

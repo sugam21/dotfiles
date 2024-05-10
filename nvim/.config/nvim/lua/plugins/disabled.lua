@@ -1,6 +1,34 @@
 return {
   { "folke/flash.nvim", enabled = false },
+  -- For completion-----------
   { "hrsh7th/nvim-cmp", enabled = true },
+  {
+    "L3MON4D3/LuaSnip",
+    enabled = true,
+  },
+  {
+    "rafamadriz/friendly-snippets",
+    enabled = true,
+  },
+  {
+    "saadparwaiz1/cmp_luasnip",
+    enabled = true,
+  },
+  --------------------- colorscheme
+  {
+    "catppuccin/nvim",
+    enabled = false,
+  },
+  ------------------ better ui
+  { "rcarriga/nvim-notify", enabled = false },
+  { "stevearc/dressing.nvim", enabled = false },
+  { "folke/noice.nvim", enabled = false },
+  ---------------utils
+  {
+    "dstein64/vim-startuptime",
+    enabled = false,
+  },
+
   {
     "folke/trouble.nvim",
     enabled = false,
@@ -42,7 +70,7 @@ return {
   },
   {
     "folke/todo-comments.nvim",
-    enabled = true,
+    enabled = false,
   },
   {
     "zbirenbaum/copilot.lua",

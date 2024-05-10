@@ -16,7 +16,7 @@ return {
 		left = 5,
 		right = 5,
 		top = 5,
-		bottom = 1,
+		bottom = 5,
 	},
 	line_height = 1.0,
 	keys = {
