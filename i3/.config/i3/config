@@ -6,11 +6,11 @@ set $sup Mod4
 gaps inner 4px
 gaps outer 4px
 workspace_layout default
-default_border pixel 0
+default_border pixel 2
 default_floating_border pixel 0
 # for touchpad fixing
-exec --no-startup-id xinput set-prop "syna32b3:01 06cb:ce7d touchpad" "libinput natural scrolling enabled" 1
-exec --no-startup-id xinput set-prop "syna32b3:01 06cb:ce7d touchpad" "libinput tapping enabled" 1
+exec --no-startup-id xinput set-prop "SYNA32B3:01 06CB:CE7D Touchpad" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "SYNA32B3:01 06CB:CE7D Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id xinput set-prop 16 332 1
 # polkit agent
 exec --no-startup-id lxpolkit 
