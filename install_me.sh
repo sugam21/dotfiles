@@ -25,3 +25,6 @@ sudo apt-get install stow
 sudo pacman -Syu geoclue, redshift
 # bluetooth
 sudo pacman -Syu bluez blueman bluez-utils
+
+# swap caps lock and esc
+xmodmap ~/.Xmodmap
