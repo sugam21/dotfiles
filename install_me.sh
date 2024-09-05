@@ -21,8 +21,7 @@ sudo apt-get install grim slurp
 
 # install stow
 sudo apt-get install stow
-
-# clone the repo
-cd ~ && git clone https://github.com/sugam21/dotfiles.git
-cd dotfiles
-stow .
+# install geoclue
+sudo pacman -Syu geoclue, redshift
+# bluetooth
+sudo pacman -Syu bluez blueman bluez-utils

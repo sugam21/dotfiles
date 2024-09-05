@@ -8,8 +8,8 @@ return {
 		"JetBrainsMonoNL Nerd Font",
 	}),
 	font_size = 14,
-	-- color_scheme = "Tomorrow Night",
-	color_scheme = "Gruvbox dark, hard (base16)",
+	color_scheme = "Tomorrow Night",
+	--color_scheme = "Gruvbox dark, hard (base16)",
 	-- color_scheme = "GruvboxDarkHard",
 	-- For window padding-> make it touch to corners
 	window_padding = {
