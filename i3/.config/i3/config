@@ -1,12 +1,12 @@
 # font pango: JetBrainsMonoNL Nerd Font 11
-font pango: Ubuntu Sans 12
+font pango: FiraCode Nerd Font Medium 12
 # set the mod key to the winkey:
 set $mod Mod1
 set $sup Mod4
 gaps inner 4px
 gaps outer 4px
 workspace_layout default
-default_border pixel 2
+default_border pixel 3
 default_floating_border pixel 0
 # for touchpad fixing
 exec --no-startup-id xinput set-prop "SYNA32B3:01 06CB:CE7D Touchpad" "libinput Natural Scrolling Enabled" 1

@@ -1,6 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 -- Select all
@@ -31,7 +28,3 @@ keymap.set("n", "<leader>zz", "<cmd> hi WinSeparator guifg=#e7e7e7 <CR>", {})
 
 -- Greatest remap ever
 keymap.set("x", "<leader>p", '"_dP')
-
--- UndoTree
-keymap.set("n", "<leader>vu", "<cmd>UndotreeToggle<CR>", opts)
--- keymap.set("n", "<leader>e", "<cmd>NvimTreeOpen<CR>", {})

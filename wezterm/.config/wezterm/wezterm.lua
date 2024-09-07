@@ -5,20 +5,27 @@ return {
 	enable_tab_bar = false,
 	window_decorations = "TITLE | RESIZE",
 	font = wezterm.font_with_fallback({
-		"JetBrainsMonoNL Nerd Font",
+		--"JetBrainsMono Nerd Font",
+		--"CaskaydiaCove Nerd Font",
+		"FiraCode Nerd Font",
 	}),
-	font_size = 14,
+
+	font_size = 15.0,
 	color_scheme = "Tomorrow Night",
+	--color_scheme = "Twilight (base16)",
 	--color_scheme = "Gruvbox dark, hard (base16)",
 	-- color_scheme = "GruvboxDarkHard",
 	-- For window padding-> make it touch to corners
+
 	window_padding = {
-		left = 5,
-		right = 5,
-		top = 5,
-		bottom = 5,
+		left = 2,
+		right = 2,
+		top = 2,
+		bottom = 2,
 	},
+
 	line_height = 1.0,
+
 	keys = {
 		{
 			key = "f",
@@ -26,6 +33,7 @@ return {
 			action = wezterm.action.ToggleFullScreen,
 		},
 	},
+
 	mouse_bindings = {
 		{
 			event = { Up = { streak = 1, button = "Left" } },

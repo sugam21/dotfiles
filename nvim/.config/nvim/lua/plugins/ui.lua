@@ -29,7 +29,7 @@ return {
     "gen740/SmoothCursor.nvim",
     config = function()
       require("smoothcursor").setup({
-        cursor = "",
+        cursor = "",
       })
     end,
   },

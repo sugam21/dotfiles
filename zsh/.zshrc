@@ -18,7 +18,7 @@ source $ZSH/oh-my-zsh.sh
 
 # A L I A S
 alias cls="clear"
-alias ls="lsd"
+alias l="eza --icons=always"
 alias bat="batcat"
 
 # ctrl + arrow skip word
@@ -107,6 +107,6 @@ if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 eval "$(zoxide init zsh)"
-source /home/sugam/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/sugam/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /home/sugam/.zsh/plugins/zsh-bat/zsh-bat.plugin.zsh
+source /home/sugam/dotfiles/zsh/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/sugam/dotfiles/zsh/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/sugam/dotfiles/zsh/.zsh/plugins/zsh-bat/zsh-bat.plugin.zsh
