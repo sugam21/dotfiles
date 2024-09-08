@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 return {
 	force_reverse_video_cursor = true,
 	enable_tab_bar = false,
-	window_decorations = "TITLE | RESIZE",
+	window_decorations = "RESIZE",
 	font = wezterm.font_with_fallback({
 		--"JetBrainsMono Nerd Font",
 		--"CaskaydiaCove Nerd Font",
@@ -12,6 +12,7 @@ return {
 
 	font_size = 15.0,
 	color_scheme = "Tomorrow Night",
+	--color_scheme = "Mountain",
 	--color_scheme = "Twilight (base16)",
 	--color_scheme = "Gruvbox dark, hard (base16)",
 	-- color_scheme = "GruvboxDarkHard",

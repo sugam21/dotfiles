@@ -39,7 +39,7 @@ sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.lis
 echo "*******************************"
 echo "*       Adding Nodejs         *"
 echo "*******************************"
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&
   echo "*******************************"
 echo "*       Adding Github CLI     *"
 echo "*******************************"
@@ -48,6 +48,22 @@ echo "*******************************"
   wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null &&
   sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg &&
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+
+echo "*******************************"
+echo "*     Installing docker       *"
+echo "*******************************"
+sudo apt-get install -y ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |
+  sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$UBUNTU_CODENAME") stable" |
+  sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
 
 echo "*******************************"
 echo "*-------Update System---------*"
@@ -61,17 +77,25 @@ echo "| wezterm                  | vlc                   | gimp                 
 echo "| microsoft-edge-stable    | eza                   | ripgrep                | gnome-tweaks           | npm                            |"
 echo "|-------------------------------------------------------------------------------------------------------------------------------------|"
 
-sudo apt-get install -y neovim stow nodejs
-sudo apt install -y flatpak gnome-software-plugin-flatpak wezterm vlc gimp zsh tmux microsoft-edge-stable eza ripgrep gnome-tweaks npm gh
+sudo apt-get install -y neovim stow nodejs docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install -y flatpak gnome-software-plugin-flatpak wezterm vlc gimp zsh tmux microsoft-edge-stable eza ripgrep gnome-tweaks npm gh bat btop
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 echo "*******************************"
-echo "*       Installing zoxide	    *"
+echo "*       Installing zoxide     *"
 echo "*******************************"
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 echo "*******************************"
-echo "*       Installing fzf	    *"
+echo "*       Installing lazygit    *"
+echo "*******************************"
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+
+echo "*******************************"
+echo "*       Installing fzf     *"
 echo "*******************************"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install

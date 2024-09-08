@@ -18,7 +18,8 @@ source $ZSH/oh-my-zsh.sh
 
 # A L I A S
 alias cls="clear"
-alias l="eza --icons=always"
+alias l="eza --icons=always --group-directories-first"
+alias l="eza --icons=always --group-directories-first"
 alias bat="batcat"
 
 # ctrl + arrow skip word
