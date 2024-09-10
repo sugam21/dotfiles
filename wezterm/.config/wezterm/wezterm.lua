@@ -5,14 +5,14 @@ return {
 	enable_tab_bar = false,
 	window_decorations = "RESIZE",
 	font = wezterm.font_with_fallback({
-		--"JetBrainsMono Nerd Font",
+		"JetBrainsMono Nerd Font",
 		--"CaskaydiaCove Nerd Font",
-		"FiraCode Nerd Font",
+		--	"FiraCode Nerd Font",
 	}),
 
 	font_size = 15.0,
-	color_scheme = "Tomorrow Night",
-	--color_scheme = "Mountain",
+	--color_scheme = "Tomorrow Night",
+	color_scheme = "Mountain",
 	--color_scheme = "Twilight (base16)",
 	--color_scheme = "Gruvbox dark, hard (base16)",
 	-- color_scheme = "GruvboxDarkHard",
