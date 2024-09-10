@@ -28,8 +28,11 @@ rm -rf .config/wezterm
 
 cd ~/dotfiles
 stow zsh nvim tmux wezterm
+echo "Copying the python project initialization script"
+sudo cp ~/dotfiles/scripts/python_project/init_project.sh ~/.local/bin
 
- git config --global user.email "sugams342@gmail.com"
- git config --global user.name "Sugam"
 
-	&& sudo apt install gh -y
+git config --global user.email "sugams342@gmail.com"
+git config --global user.name "Sugam"
+
+ && sudo apt install gh -y
