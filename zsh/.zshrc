@@ -1,6 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local:$PATH
 export PATH="$HOME/.local/bin:$PATH"
+PATH=$PATH:/usr/local/go/bin
 # export PATH="$HOME/.cargo/bin/:$PATH"
 # export TERM="xterm-256color"
 export LC_ALL=en_IN.UTF-8
