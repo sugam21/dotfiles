@@ -2,7 +2,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "base16-tomorrow-night",
+      --colorscheme = "base16-tomorrow-night",
+      colorscheme = "base16-mountain",
       --colorscheme = "base16-twilight",
     },
   },
