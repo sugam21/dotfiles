@@ -8,3 +8,4 @@ sudo apt-get install miktex -y
 echo "installing zathura"
 sudo apt install zathura -y
 echo "You can install texmaker from pop shop."
+sudo apt install sqlite3
