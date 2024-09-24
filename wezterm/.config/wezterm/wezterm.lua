@@ -12,11 +12,12 @@ return {
 
 	font_size = 15.0,
 	--color_scheme = "Tomorrow Night",
+	color_scheme = "Tomorrow (dark) (terminal.sexy)",
 	--color_scheme = "Mountain",
 	--color_scheme = "Catppuccin Mocha",
 	--color_scheme = "rose-pine",
 	--color_scheme = "Twilight (base16)",
-	color_scheme = "Gruvbox dark, hard (base16)",
+	--color_scheme = "Gruvbox dark, hard (base16)",
 	-- For window padding-> make it touch to corners
 
 	window_padding = {
