@@ -97,6 +97,7 @@ alias v="nvim"
 # Arch updated
 alias spu="sudo pacman -Syu"
 alias snu="sudo apt-get update && sudo apt-get upgrade"
+alias snu="sudo apt-get update -y && sudo apt-get upgrade -y"
 alias syu="yay -Syu"
 
 # For How do I 
