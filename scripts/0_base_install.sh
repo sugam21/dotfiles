@@ -39,8 +39,8 @@ sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.lis
 echo "*******************************"
 echo "*       Adding Nodejs         *"
 echo "*******************************"
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&
-  echo "*******************************"
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash
+echo "*******************************"
 echo "*       Adding Github CLI     *"
 echo "*******************************"
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) &&
