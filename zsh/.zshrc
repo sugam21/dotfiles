@@ -118,13 +118,6 @@ export PATH=$PATH:/home/sugam/.spicetify
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
-fpath+=${ZDOTDIR:-~}/.zsh_functions
-
 eval "$(zoxide init zsh)"
 source /home/sugam/dotfiles/zsh/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/sugam/dotfiles/zsh/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
