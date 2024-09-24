@@ -24,6 +24,10 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 ZSH_THEME=spaceship
+#ZSH_THEME=spaceship
+#ZSH_THEME=afowler
+ZSH_THEME=awesomepanda
+#ZSH_THEME=gozilla
 
 plugins=(git poetry)
 
