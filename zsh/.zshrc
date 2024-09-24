@@ -1,9 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local:$PATH
 export PATH="$HOME/.local/bin:$PATH"
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export PATH="$PATH:/usr/lib/jvm/java-11-openjdk-amd64/bin"
-export HADOOP_HOME=/home/sugam/hadoop/
+export HADOOP_HOME=/home/sugam/hadoop
 export HADOOP_INSTALL=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_COMMON_HOME=$HADOOP_HOME
@@ -12,6 +12,8 @@ export HADOOP_YARN_HOME=$HADOOP_HOME
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+SPARK_HOME=/opt/spark/spark-3.5.2-bin-hadoop3
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
 PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:$HOME/dotfiles/scripts/python_project/
 # export PATH="$HOME/.cargo/bin/:$PATH"
