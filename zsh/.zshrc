@@ -23,7 +23,6 @@ export LANG=en_IN.UTF-8
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
-ZSH_THEME=spaceship
 #ZSH_THEME=spaceship
 #ZSH_THEME=afowler
 ZSH_THEME=awesomepanda
@@ -96,7 +95,6 @@ alias v="nvim"
 
 # Arch updated
 alias spu="sudo pacman -Syu"
-alias snu="sudo apt-get update && sudo apt-get upgrade"
 alias snu="sudo apt-get update -y && sudo apt-get upgrade -y"
 alias syu="yay -Syu"
 
