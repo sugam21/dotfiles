@@ -11,9 +11,14 @@ export HADOOP_HDFS_HOME=$HADOOP_HOME
 export HADOOP_YARN_HOME=$HADOOP_HOME
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
-export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+# export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"
 SPARK_HOME=/opt/spark/spark-3.5.2-bin-hadoop3
+export PYLIB=$SPARK_HOME/python/lib
+export PYSPARK_PYTHON=/usr/local/bin/python3.12
 export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+export PDSH_RCMD_TYPE=ssh
 PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:$HOME/dotfiles/scripts/python_project/
 # export PATH="$HOME/.cargo/bin/:$PATH"
@@ -110,10 +115,10 @@ export VISUAL="nvim"
 #export TERM="wezterm"
 
 # To start tmux by default when terminal starts
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-   tmux attach -t main || tmux new -s main
-fi
-
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    tmux attach -t main || tmux new -s main
+# fi
+#
 export PATH=$PATH:/home/sugam/.spicetify
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
