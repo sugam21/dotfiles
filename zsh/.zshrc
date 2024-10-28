@@ -25,6 +25,8 @@ PATH=$PATH:$HOME/dotfiles/scripts/python_project/
 # export TERM="xterm-256color"
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
+# For Fluuter
+export PATH="~/development/flutter/bin:$PATH"
 
 
 ENABLE_CORRECTION="true"
