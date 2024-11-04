@@ -1,32 +1,16 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local:$PATH
 export PATH="$HOME/.local/bin:$PATH"
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export PATH="$PATH:/usr/lib/jvm/java-11-openjdk-amd64/bin"
-export HADOOP_HOME=/home/sugam/hadoop
-export HADOOP_INSTALL=$HADOOP_HOME
-export HADOOP_MAPRED_HOME=$HADOOP_HOME
-export HADOOP_COMMON_HOME=$HADOOP_HOME
-export HADOOP_HDFS_HOME=$HADOOP_HOME
-export HADOOP_YARN_HOME=$HADOOP_HOME
-export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
-export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
-# export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
-export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
-export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"
-SPARK_HOME=/opt/spark/spark-3.5.2-bin-hadoop3
-export PYLIB=$SPARK_HOME/python/lib
-export PYSPARK_PYTHON=/usr/local/bin/python3.12
-export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-export PDSH_RCMD_TYPE=ssh
-PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:$HOME/dotfiles/scripts/python_project/
-# export PATH="$HOME/.cargo/bin/:$PATH"
-# export TERM="xterm-256color"
+# For Fluuter
+export PATH=$HOME/development/flutter/bin:$PATH
+export ANDROID_HOME=$HOME/Android/Sdk/
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
-# For Fluuter
-export PATH="~/development/flutter/bin:$PATH"
 
 
 ENABLE_CORRECTION="true"
@@ -37,26 +21,18 @@ COMPLETION_WAITING_DOTS="true"
 ZSH_THEME=awesomepanda
 #ZSH_THEME=gozilla
 
-plugins=(git poetry)
+plugins=(git poetry asdf)
 
 source $ZSH/oh-my-zsh.sh
 
 # A L I A S
 alias cls="clear"
 alias l="eza --icons=always --group-directories-first"
-alias l="eza --icons=always --group-directories-first"
 alias bat="batcat"
 
 # ctrl + arrow skip word
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
-
-# WIFI
-alias wifi-off="nmcli radio wifi off"
-alias wifi-on="nmcli radio wifi on"
-
-# RSTUDIO
-alias rstudio="sudo rstudio --no-sandbox"
 
 alias cd="z"
 
@@ -67,6 +43,8 @@ alias gb="git branch"
 alias gp="git push -u origin"
 alias gf="git fetch"
 alias gpo="git pull origin"
+alias gl="git log --oneline --graph"
+alias gd="git diff"
 
 alias lg="lazygit"
 
