@@ -1,13 +1,13 @@
-@define-color bar-bg #1d2021;
+@define-color bar-bg #0f0f0f;
 
-@define-color main-bg #303030;
-@define-color main-fg #c5c8c6;
+@define-color main-bg #0f0f0f;
+@define-color main-fg #767676;
 @define-color workspace-fg #c5c8c6;
 
-@define-color wb-act-fg #cc6666;
+@define-color wb-act-fg #ceb188;
 
-@define-color battery #81a2be;
-@define-color clock #b5bd68;
+@define-color battery #8a98ac;
+@define-color clock #8aac8b;
 @define-color pulseaudio #de935f;
 @define-color network #b294bb;
 @define-color power #4d5057;

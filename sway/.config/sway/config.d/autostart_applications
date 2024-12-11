@@ -7,5 +7,5 @@ exec rofi
 # Network Applet
 exec nm-applet --indicator
 # Bluetooth
-exec --no-startup-id blueberry-tray
+exec --no-startup-id blueberry-tray wlsunset gammastep
 

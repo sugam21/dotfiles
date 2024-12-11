@@ -1,9 +1,8 @@
 * {
   border: none;
   border-radius: 0px;
-  font-family: "JetBrainsMono Nerd Font";
-  font-weight: bold;
-  font-size: 16px;
+  font-family: "FiraCode Nerd Font";
+  font-size: 19px;
 }
 
 @import "themes/Tomorrow-Night.css";
@@ -18,15 +17,16 @@ tooltip {
 }
 
 #workspaces button {
-  margin: 3px;
-  padding: 0px 1px;
+  margin: 0px;
+  padding: 0px 0px;
   color: @workspace-fg;
-  transition: all 0.1s ease-in;
+  border: 1px solid #4c4c4c;
 }
 
 #workspaces button.focused {
   background: transparent;
   color: @wb-act-fg;
+  border: 1px solid @wb-act-fg;
 }
 
 #backlight,
@@ -61,24 +61,24 @@ tooltip {
 }
 
 #battery {
-  color: @battery;
+  color: @workspace-fg;
 }
 #backlight {
-  color: @backlight;
+  color: @workspace-fg;
 }
 
 #clock,
 #idle_inhibitor {
-  color: @clock;
+  color: @workspace-fg;
   font-weight: bold;
 }
 
 #pulseaudio {
-  color: @pulseaudio;
+  color: @workspace-fg;
 }
 
 #network {
-  color: @network;
+  color: @workspace-fg;
 }
 
 #custom-power {
@@ -98,19 +98,4 @@ tooltip {
 #custom-sr_end {
   border-radius: 0px;
   /* margin-right: 5px; */
-}
-
-#custom-sl_end {
-  border-radius: 0px;
-  /* margin-left: 5px; */
-}
-
-#custom-rr_end {
-  border-radius: 0px 7px 7px 0px;
-  /* margin-right: 5px; */
-}
-
-#custom-rl_end {
-  border-radius: 7px 0px 0px 7px;
-  /* margin-left: 5px; */
 }

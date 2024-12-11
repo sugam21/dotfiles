@@ -14,12 +14,12 @@ set $term flatpak run org.wezfurlong.wezterm
 
 # AUDIO CONTROL
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
+# bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
+# bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
 
-# mute
-bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_mute
-
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 # mic mute toggle
 bindsym XF86AudioMicMute exec amixer sset Capture toggle
 
@@ -29,20 +29,22 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # BRIGHTNESS CONTROL
-bindsym XF86MonBrightnessDown exec light -U 5
-bindsym XF86MonBrightnessUp exec light -A 5
+#bindsym XF86MonBrightnessDown exec light -U 5
+# bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 # Custom launcher
-set $menu "/home/sugam/dotfiles/rofi/.config/rofi/launchers/type-6/launcher.sh"
+set $menu "/home/sugam/dotfiles/rofi/.config/rofi/launchers/type-4/launcher.sh"
 
 ### Idle configuration
 #
  exec swayidle -w \
          timeout 86400 'swaylock -f -c 000000' \
-	  timeout 15 'swaylock -f -i ~/Pictures/blobs-d-8df5f7b2975a60f8ad7e525af8b7e6ae176e54b3.jpg --indicator-radius 70 --inside-color 1e1e2e --inside-clear-color f5c2e7 --inside-wrong-color f38ba8 --ring-color 1e1e2e --ring-clear-color f5c2e7 --ring-ver-color 89b4fa --ring-wrong-color f38ba8 --inside-ver-color 89b4fa  --line-clear-color f5c2e7 --line-wrong-color f38ba8 --line-ver-color 89b4fa --font "SF Pro Display"' \
+	  timeout 15 'swaylock -f -i ~/Pictures/Wallpapers/pzbxb7s7io1e1.jpeg --indicator-radius 70 --inside-color 1e1e2e --inside-clear-color f5c2e7 --inside-wrong-color f38ba8 --ring-color 1e1e2e --ring-clear-color f5c2e7 --ring-ver-color 89b4fa --ring-wrong-color f38ba8 --inside-ver-color 89b4fa  --line-clear-color f5c2e7 --line-wrong-color f38ba8 --line-ver-color 89b4fa --font "FiraCode Nerd Font"' \
           timeout 86400 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           before-sleep 'swaylock -f -c 000000' \
-	  before-sleep 'swaylock -f -i ~/Pictures/blobs-d-8df5f7b2975a60f8ad7e525af8b7e6ae176e54b3.jpg --indicator-radius 70 --inside-color 1e1e2e --inside-clear-color f5c2e7 --inside-wrong-color f38ba8 --ring-color 1e1e2e --ring-clear-color f5c2e7 --ring-ver-color 89b4fa --ring-wrong-color f38ba8 --inside-ver-color 89b4fa  --line-clear-color f5c2e7 --line-wrong-color f38ba8 --line-ver-color 89b4fa --font "SF Pro Display"'
+	  before-sleep 'swaylock -f -i ~/Pictures/blobs-d-8df5f7b2975a60f8ad7e525af8b7e6ae176e54b3.jpg --indicator-radius 70 --inside-color 1e1e2e --inside-clear-color f5c2e7 --inside-wrong-color f38ba8 --ring-color 1e1e2e --ring-clear-color f5c2e7 --ring-ver-color 89b4fa --ring-wrong-color f38ba8 --inside-ver-color 89b4fa  --line-clear-color f5c2e7 --line-wrong-color f38ba8 --line-ver-color 89b4fa --font "FiraCode Nerd Font"'
 
   # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -70,8 +72,8 @@ set $menu "/home/sugam/dotfiles/rofi/.config/rofi/launchers/type-6/launcher.sh"
 
 # Rofi Menus:
 # bindsym $mod+m exec "bash /home/prtyksh/.config/rofi/applets/bin/mpd.sh"
-    bindsym XF86PowerOff exec "bash /home/prtyksh/.config/rofi/powermenu/type-6/powermenu.sh"
-    # bindsym $mod+Shift+e exec --no-startup-id ~/dotfiles/rofi/.config/rofi/powermenu/type-5/powermenu.sh
+    # bindsym XF86PowerOff exec "bash /home/prtyksh/.config/rofi/powermenu/type-4/powermenu.sh"
+    bindsym $mod+Shift+w exec --no-startup-id ~/dotfiles/rofi/.config/rofi/powermenu/type-4/powermenu.sh
 
     # Restart Waybar
 
@@ -181,7 +183,7 @@ include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "
 # App shortcuts
 #
     bindsym $mod+n exec thunar
-    bindsym $mod+b exec Brave
+    bindsym $mod+b exec Firefox
 #
 # Screenshots
 

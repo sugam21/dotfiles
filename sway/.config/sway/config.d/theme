@@ -4,29 +4,29 @@ exec_always ~/dotfiles/sway/.config/sway/scripts/import-gsettings
 #GTK Theme:
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Kanagawa-BL-LB'
+    # gsettings set $gnome-schema gtk-theme 'Kanagawa-BL-LB'
     gsettings set $gnome-schema icon-theme 'Papirus'
-    gsettings set $gnome-schema cursor-theme 'Pop'
-    gsettings set $gnome-schema font-name 'Ubuntu Regular'
+    # gsettings set $gnome-schema cursor-theme 'Pop'
+    # gsettings set $gnome-schema font-name 'Ubuntu Regular'
 }
 
 # Set inner/outer gaps
 gaps inner 2
 gaps outer 2
-
+#
 # Hide titlebar on windows:
-default_border pixel 4
+default_border pixel 2
 
 # Default Font
-font pango:Ubuntu Regular 12
+font pango:FiraCode Nerd Font 12
 
 # Thin borders:
-# smart_borders off
+smart_borders off
 
 # Set wallpaper:
 # exec swaybg -i /home/sugam/Pictures/anime_desk.jpg fill
 
-output * bg /home/sugam/Pictures/imageonline-co-vibranceimage.png fill
+output * bg /home/sugam/Pictures/tumblr_nsk7sm60r71sg36bfo1_1280.jpg fill
 
 # Title format for windows
 for_window [shell="xdg_shell"] title_format "%title (%app_id)"

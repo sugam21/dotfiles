@@ -6,39 +6,23 @@
         "passthrough": false,
         "gtk-layer-shell": true,
 
-
-    "modules-left": [
-        "custom/l_end",
-        "custom/power",
-        "custom/cliphist",
-        "custom/wifi",
-        "tray",
-        "custom/r_end",
-    ],
- 
-    "modules-center": [
-        "custom/padd",
-        "custom/l_end",
-        "idle_inhibitor",
-        "clock",
-        "custom/r_end",
-        "custom/padd",
-        "custom/l_end",
+"modules-left": [
         "sway/workspaces",
-        "custom/r_end",
-    ],
+],
+
 
     "modules-right": [
-        "custom/padd",
-        "custom/l_end",
-        "battery",
-        "custom/padd",
-        "backlight",
-        "custom/padd",
-        "pulseaudio",
-        "custom/padd",
-        "network",
-        "custom/r_end",
+    "clock",
+    "custom/padd",
+    "bluetooth",
+    "custom/padd",
+    "battery",
+    "custom/padd",
+    "backlight",
+    "custom/padd",
+    "pulseaudio",
+    "custom/padd",
+    "network",
     ],
 
     // Modules
@@ -167,14 +151,14 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "1": "U:",
-            "2": "I:",
-            "3": "O:󰉋",
-            "4": "P:",
-            "5": "A:",
-            "6": "S:󰭹",
-            "7": "D:",
-            "8": "Z:󱀇",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
         },
     },
 
@@ -230,7 +214,7 @@
   },
 
   "custom/padd": {
-        "format": "  ",
+        "format": " ",
         "interval": "once",
         "tooltip": false
   },

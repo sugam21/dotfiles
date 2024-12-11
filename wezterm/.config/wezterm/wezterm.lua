@@ -3,11 +3,11 @@ local wezterm = require("wezterm")
 return {
 	force_reverse_video_cursor = true,
 	enable_tab_bar = false,
-	window_decorations = "RESIZE",
+	--window_decorations = "None",
 	font = wezterm.font_with_fallback({
-		"JetBrainsMono Nerd Font",
+		--"JetBrainsMono Nerd Font",
 		--"CaskaydiaCove Nerd Font",
-		--	"FiraCode Nerd Font",
+		"FiraCode Nerd Font",
 	}),
 
 	font_size = 15.0,
@@ -22,8 +22,8 @@ return {
 
 	window_padding = {
 		left = 7,
-		right = 1,
-		top = 2,
+		right = 2,
+		top = 5,
 		bottom = 0,
 	},
 

@@ -8,6 +8,8 @@ PATH=$PATH:$HOME/dotfiles/scripts/python_project/
 export PATH=$HOME/development/flutter/bin:$PATH
 export ANDROID_HOME=$HOME/Android/Sdk/
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+export PATH="/home/sugam/.asdf/installs/poetry/1.8.4/bin:$PATH"
+export PYTHONPATH=.
 
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
@@ -82,7 +84,7 @@ alias v="nvim"
 
 # Arch updated
 alias spu="sudo pacman -Syu"
-alias snu="sudo apt-get update -y && sudo apt-get upgrade -y"
+alias snu="sudo nala update && sudo nala upgrade "
 alias syu="yay -Syu"
 
 # For How do I 
